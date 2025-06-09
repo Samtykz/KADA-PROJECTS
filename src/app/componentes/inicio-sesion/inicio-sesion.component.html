@@ -1,0 +1,55 @@
+<br><br><br><br><br>
+<h1 style="font-size: 40px; text-align: center; color: black;">INICIAR SESIÓN</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="margin: 0 auto">
+            <form [formGroup]="form" (ngSubmit)="onLogin()">
+                
+                <!-- Campo Correo -->
+                <div class="mb-3">
+                  <label for="clie_correo" class="form-label">Ingresar Correo Electrónico</label>
+                  <input type="email" required class="form-control" id="clie_correo" formControlName="clie_correo" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">Tu correo nunca será compartido con nadie más.</div>
+
+                  <!-- Mensaje de error -->
+                  <div *ngIf="form.controls['clie_correo'].invalid && form.controls['clie_correo'].touched" class="text-danger">
+                    <small *ngIf="form.controls['clie_correo'].errors?.['required']">El correo es obligatorio.</small>
+                    <small *ngIf="form.controls['clie_correo'].errors?.['email']">Formato de correo inválido.</small>
+                  </div>
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="mb-3">
+                  <label for="contrasena" class="form-label">Ingresar Contraseña</label>
+                  <input type="password" required class="form-control" id="contrasena" formControlName="contrasena" aria-describedby="passwordHelp">
+
+                  <!-- Mensaje de error -->
+                  <div *ngIf="form.controls['contrasena'].invalid && form.controls['contrasena'].touched" class="text-danger">
+                    <small *ngIf="form.controls['contrasena'].errors?.['required']">La contraseña es obligatoria.</small>
+                    <small *ngIf="form.controls['contrasena'].errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
+                  </div>
+                </div>
+
+                <!-- Checkbox y Registro -->
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Recordar Contraseña</label>
+                  <p style="display: flex; flex-direction: row; justify-content: right;">
+                    ¿No tienes una cuenta? | <a [routerLink]="['/regCliente']" style="text-decoration: none;"> Regístrate</a>
+                  </p>
+                </div>
+
+                <!-- Botón de Envío -->
+                <input type="submit" class="btn btn-secondary me-2" value="Iniciar Sesión" [disabled]="form.invalid">
+
+                <!-- Mensaje de Error de autenticación -->
+                <div *ngIf="mensajeError" class="alert alert-danger mt-3">
+                  {{ mensajeError }}
+                </div>
+
+            </form>
+        </div>	  
+    </div>
+</div>
+<br><br>	

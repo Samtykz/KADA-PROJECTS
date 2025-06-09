@@ -1,0 +1,31 @@
+<br><br><br><br><br>
+		<h1 style="font-size: 40px; text-align: center; color: black;">PEDIDO</h1>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-6"style="margin: 0 auto">
+				<form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-labblacel">Documento del Cliente</label>
+                        <input type="text" class="form-control" id="clie_Documento_FK" formControlName="clie_Documento_FK" name="clie_Documento_FK" required>
+                        <div class="form-text">Ingresa el Número de Documento del Cliente.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-group col-md-4">
+                          <label for="inputDate">Fecha del Pedido</label>
+                          <input type="date" class="form-control" id="fechaPedido" name="fechaPedido" formControlName="fechaPedido" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-group col-md-4">
+                          <label for="inputHour">Hora del Pedido</label>
+                          <input type="time" class="form-control" id="horaPedido" name="horaPedido" formControlName="horaPedido" required />
+                    </div>
+                    <div class="d-flex justify-content-end pt-3">
+                        <a href="#"><button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg ms-2">Cancelar</button></a>
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg ms-2" name="guardar">Confirmar</button>
+                      </div>         
+			</div>	  
+		</div>
+    <br><br>

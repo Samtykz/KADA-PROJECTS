@@ -1,0 +1,95 @@
+<br><br>
+	<section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-8">
+          <div class="card card-registration my-4" style="display: flex; justify-content: center; align-items: center; border-radius: 15px;">
+            <div class="col-xl-10">
+              <div class="card-body p-md-8 text-black">
+                <h3 class="mb-5 text-uppercase" style="text-align: center;">REGÍSTRATE</h3>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="clie_nombre" name="clie_nombre" formControlName="clie_nombre" class="form-control form-control-lg" required/>
+                        <label class="form-label">Nombre</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="clie_apellido" name="clie_apellido" formControlName="clie_apellido" class="form-control form-control-lg" required />
+                        <label class="form-label">Apellido</label>
+                      </div>
+                    </div>
+                  </div>
+                        
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" id="clie_Telefono" name="clie_Telefono" formControlName="clie_Telefono" class="form-control form-control-lg" required/>
+                        <label class="form-label">Teléfono</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" id="clie_Telefono2" name="clie_Telefono2" formControlName="clie_Telefono2" class="form-control form-control-lg" required/>
+                        <label class="form-label">Teléfono 2</label>
+                      </div>
+                    </div>
+                  </div>
+                        
+                  <div class="form-outline mb-4">
+                    <input type="number" id="clie_Documento_PK" name="clie_Documento_PK" formControlName="clie_Documento_PK" class="form-control form-control-lg" required/>
+                    <label class="form-label">Número de Documento</label>
+                  </div>
+
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                    <h6 class="mb-0 me-4">Tipo Documento:</h6>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="id_TipoDocumento_FK" id="tipoCedula" value="1" formControlName="id_TipoDocumento_FK"/>
+                      <label class="form-check-label" for="tipoCedula">Cédula de Ciudadanía</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="id_TipoDocumento_FK" id="tipoTarjeta" value="2" formControlName="id_TipoDocumento_FK"/>
+                      <label class="form-check-label" for="tipoTarjeta">Tarjeta de Identidad</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0">
+                      <input class="form-check-input" type="radio" name="id_TipoDocumento_FK" id="tipoExtranjeria" value="3" formControlName="id_TipoDocumento_FK"/>
+                      <label class="form-check-label" for="tipoExtranjeria">Documento Extranjería</label>
+                    </div>
+                  </div>
+                        
+                  <div class="form-outline mb-4">
+                    <input type="text" id="clie_direccion" name="clie_direccion" formControlName="clie_direccion" class="form-control form-control-lg" required/>
+                    <label class="form-label">Dirección</label>
+                  </div>
+                        
+                  <div class="form-outline mb-4">
+                    <input type="email" id="clie_correo" name="clie_correo" formControlName="clie_correo" class="form-control form-control-lg" required/>
+                    <label="form-label">Correo Electrónico</label>
+                  </div>
+                      
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+		                <input type="password" id="contrasena" name="contrasena" formControlName="contrasena" class="form-control form-control-lg" required/>
+		                <label class="form-label">Contraseña</label>
+	                </div>
+
+	                <div data-mdb-input-init class="form-outline mb-4">
+		                <input type="password" id="contrasena" name="contrasena" class="form-control form-control-lg" required/>
+		                <label class="form-label">Confirmar Contraseña</label>
+		                <br>
+		                <div class="form-text">Verifica todos tus datos antes de seleccionar "Confirmar".</div>
+	                </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg ms-2" name="guardar">Confirmar</button>
+                  </div>                        
+                </form>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<br><br>

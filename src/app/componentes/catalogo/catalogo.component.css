@@ -1,0 +1,11 @@
+.iframe{
+    flex: 1; /* El iframe ocupará el resto del espacio disponible */
+    border: none; /* Remueve el borde por defecto */
+    margin-top: 60px; /* Desplaza el iframe para que no cubra el nav */
+
+}
+.mainn{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

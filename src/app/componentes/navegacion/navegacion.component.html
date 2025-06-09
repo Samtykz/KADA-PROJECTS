@@ -1,0 +1,33 @@
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar" id="navv">
+
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/inicio']">KADA<span>.</span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsFurni">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        <li><a class="nav-link" [routerLink]="['/inicio']">Inicio</a></li>
+        <li><a class="nav-link" [routerLink]="['/catalogo']">Catálogo</a></li>
+        <li><a class="nav-link" [routerLink]="['/servicios']">Servicios</a></li>
+        <li><a class="nav-link" [routerLink]="['/contactos']">Contáctanos</a></li>
+      </ul>
+      <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5" >
+        <li><a class="nav-link" [routerLink]="['/carrito']"><img src="asset\img\cart.svg"></a></li>
+        <div class="dropdown">
+          <button class="dropbtn"><img src="asset\img\user.svg"></button>
+          <div class="dropdown-content">
+              <a [routerLink]="['/inicio-sesion']">Iniciar Sesión</a>
+              <a (click)="onlogout()">Cerrar Sesión</a>
+              <a>Registrarse</a>
+          </div>  
+      </div>
+      <li><a class="nav-link" [routerLink]="['/loginAdmi']"><img src="asset\img\loginAdmi.svg"></a></li>
+      </ul>
+    </div>
+  </div>
+    
+</nav>

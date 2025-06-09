@@ -1,0 +1,36 @@
+<br><br><br><br><br><br><br>
+<div class="main">
+    <h1 style="font-size: 40px; text-align: center; color: black;">INICIAR SESIÓN COMO ADMINISTRADOR</h1>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="margin: 0 auto">
+            <form [formGroup]="form" (ngSubmit)="onLogin()">
+                <div class="mb-3">
+                    <label class="form-label">Ingresa Correo Electrónico</label>
+                    <input type="email" class="form-control" formControlName="admi_correo">
+                    <div *ngIf="form.controls['admi_correo'].invalid && form.controls['admi_correo'].touched" class="text-danger">
+                        <span *ngIf="form.controls['admi_correo'].errors?.['required']">El correo es obligatorio.</span>
+                        <span *ngIf="form.controls['admi_correo'].errors?.['email']">El formato del correo es inválido.</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ingresar Contraseña</label>
+                    <input type="password" class="form-control" formControlName="admi_contrasena">
+                    <div *ngIf="form.controls['admi_contrasena'].invalid && form.controls['admi_contrasena'].touched" class="text-danger">
+                        <span *ngIf="form.controls['admi_contrasena'].errors?.['required']">La contraseña es obligatoria.</span>
+                        <span *ngIf="form.controls['admi_contrasena'].errors?.['minlength']">La contraseña debe tener al menos 6 caracteres.</span>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-secondary me-2" value="Iniciar Sesión">
+            </form>
+
+            <!-- Mensaje de error general -->
+            <div *ngIf="mensajeError" class="alert alert-danger mt-3">
+                {{ mensajeError }}
+            </div>
+        </div>	  
+    </div>
+</div>
+<br><br><br><br>
