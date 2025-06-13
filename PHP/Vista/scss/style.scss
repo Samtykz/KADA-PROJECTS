@@ -39,18 +39,20 @@ body {
 	background-color: $lighter;
 }
 
+$dark: #2f2f2f;
+
 a {
-	text-decoration: none;
-	transition: .3s all ease;
-	color: $dark;
-	text-decoration: underline;
-	&:hover {
-		color: $dark;
-		text-decoration: none;
-	}
-	&.more {
-		font-weight: 600;
-	}
+  transition: .3s all ease;
+  color: $dark;
+  text-decoration: underline;
+
+  &:hover {
+    color: $dark;
+    text-decoration: none;
+  }
+  &.more {
+    font-weight: 600;
+  }
 }
 
 .custom-navbar {
