@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 import { CabeceraComponent } from "./componentes/cabecera/cabecera.component";
 import { NavegacionComponent } from "./componentes/navegacion/navegacion.component";
 import { PieComponent } from "./componentes/pie/pie.component";
@@ -18,5 +19,4 @@ export class AppComponent {
   title = 'kada';
   mostrarCabeceraYpie = true;
 }
-
 
