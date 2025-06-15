@@ -15,24 +15,20 @@ import { CommonModule } from '@angular/common';  // 💡 Importar CommonModule
 export class LoginAdmiComponent {
   form: FormGroup;
   mensajeError: string = '';
-
   constructor(private http: HttpClient, private router: Router) {
     this.form = new FormGroup({
       admi_correo: new FormControl('', [Validators.required, Validators.email]),  
       admi_contrasena: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
   }
-
   onLogin() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       this.mensajeError = 'Por favor, completa todos los campos correctamente.';
       return;
     }
-
     const datos = this.form.value;
     console.log('Datos enviados:', datos);
-
     this.http.post<{token: string }>('http://20.224.16.209:8000/api/loginAdmin1', datos)
     .subscribe({
       next: (respuesta) => {
