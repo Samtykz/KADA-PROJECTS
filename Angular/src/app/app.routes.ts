@@ -3,8 +3,6 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { RegistroClienteComponent } from './componentes/registro-cliente/registro-cliente.component';
 import { RegistroPedidoComponent } from './componentes/registro-pedido/registro-pedido.component';
 import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
-import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
 import { CatalogoComponent } from './componentes/catalogo/catalogo.component';
 import { ServiciosComponent } from './componentes/servicios/servicios.component';
 import { ContactosComponent } from './componentes/contactos/contactos.component';
