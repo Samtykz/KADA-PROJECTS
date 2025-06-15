@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Route, RouterLink } from '@angular/router';
-import { Router } from 'express';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
