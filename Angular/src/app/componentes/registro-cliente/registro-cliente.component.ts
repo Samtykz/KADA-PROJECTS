@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-registro-cliente',
@@ -13,7 +12,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class RegistroClienteComponent {
   form:FormGroup;
 
-  constructor(private http:HttpClient){
+  constructor(private readonly http:HttpClient){
     this.form = new FormGroup({
       clie_Documento_PK: new FormControl(''),
       clie_nombre: new FormControl(''),
