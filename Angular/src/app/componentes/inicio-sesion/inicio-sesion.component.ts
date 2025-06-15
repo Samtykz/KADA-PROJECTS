@@ -15,7 +15,7 @@ export class InicioSesionComponent {
   form: FormGroup;
   mensajeError: string = '';
 
-  constructor(private readonly http: HttpClient, private router: Router) {
+  constructor(private readonly http: HttpClient, private readonly router: Router) {
     this.form = new FormGroup({
       clie_correo: new FormControl('', [Validators.required, Validators.email]),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(6)])
