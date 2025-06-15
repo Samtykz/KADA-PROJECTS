@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
+        // $schedule->command('inspire')->hourly();
     }
 
     /**
@@ -20,10 +21,6 @@ class Kernel extends ConsoleKernel
     protected function commands(): void
     {
         $this->load(__DIR__.'/Commands');
-
-        // Laravel does not support importing regular PHP files via the "use" statement.
-        // If you want to import classes, use "use" at the top of the file.
-        // For file inclusion (like routes/console.php), continue to use require.
         require base_path('routes/console.php');
     }
 }
