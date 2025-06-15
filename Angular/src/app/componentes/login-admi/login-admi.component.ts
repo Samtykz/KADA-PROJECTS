@@ -2,19 +2,19 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';  // 💡 Importar CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-admi',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule], // 💡 Agregar CommonModule
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './login-admi.component.html',
   styleUrl: './login-admi.component.css'
 })
 export class LoginAdmiComponent {
   form: FormGroup;
   mensajeError: string = '';
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private readonly http: HttpClient, private readonly router: Router) {
     this.form = new FormGroup({
       admi_correo: new FormControl('', [Validators.required, Validators.email]),  
       admi_contrasena: new FormControl('', [Validators.required, Validators.minLength(6)])
