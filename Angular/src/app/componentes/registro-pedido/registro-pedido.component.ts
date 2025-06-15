@@ -13,7 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class RegistroPedidoComponent {
   form:FormGroup;
 
-  constructor(private http:HttpClient){
+  constructor(private readonly http:HttpClient){
     this.form= new FormGroup({
       fechaPedido: new FormControl(''),
       horaPedido: new FormControl(''),
