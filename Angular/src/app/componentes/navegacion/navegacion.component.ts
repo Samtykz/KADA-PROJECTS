@@ -11,7 +11,7 @@ import { AuthService } from '../../auth.service';
 })
 export class NavegacionComponent {
   
-  constructor(private authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {}
 
   onlogout() {
     this.authService.logout();
