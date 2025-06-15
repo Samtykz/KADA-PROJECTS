@@ -7,15 +7,15 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule], // ✅ Asegura que RouterModule está aquí
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './inicio-sesion.component.html',
   styleUrl: './inicio-sesion.component.css'
-})  
+})
 export class InicioSesionComponent {
   form: FormGroup;
   mensajeError: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private readonly http: HttpClient, private router: Router) {
     this.form = new FormGroup({
       clie_correo: new FormControl('', [Validators.required, Validators.email]),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -24,10 +24,9 @@ export class InicioSesionComponent {
 
   onLogin() {
     if (this.form.invalid) {
-      this.form.markAllAsTouched(); // ❗ Marca los campos como tocados para que muestren errores
+      this.form.markAllAsTouched();
       return;
     }
-
     const datos = this.form.value;
     this.http.post<{ token: string }>('http://20.224.16.209:8000/api/login', datos)
       .subscribe({
