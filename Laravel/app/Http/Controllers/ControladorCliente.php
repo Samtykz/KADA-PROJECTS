@@ -6,7 +6,7 @@ use App\Models\clienteModelo;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
-class controladorCliente extends Controller
+class ControladorCliente extends Controller
 {
     public function index()
     {

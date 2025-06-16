@@ -2,11 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorCliente;
+use App\Http\Controllers\ControladorCliente;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\pedidoControlador; 
 use App\Http\Controllers\loginAdminController; 
-use App\Http\Controllers\controladorAdmin;
+use App\Http\Controllers\ControladorAdmin;
 use App\Http\Controllers\detalleControlador;
 use App\Http\Controllers\prodControlador;
 
@@ -26,11 +26,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['cors'])->group(function () {
-    Route::get('/cliente', [controladorCliente::class, 'index']);
-    Route::get('/cliente/{clie_Documento_PK}', [controladorCliente::class, 'show']);
-    Route::post('/cliente', [controladorCliente::class, 'store']);
-    Route::delete('/cliente/{clie_Documento_PK}', [controladorCliente::class, 'destroy']);
-    Route::put('/cliente/{clie_Documento_PK}', [controladorCliente::class, 'update']); 
+    Route::get('/cliente', [ControladorCliente::class, 'index']);
+    Route::get('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'show']);
+    Route::post('/cliente', [ControladorCliente::class, 'store']);
+    Route::delete('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'destroy']);
+    Route::put('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'update']); 
     Route::post('/login', [LoginController::class, 'login']);
 });
 
@@ -42,11 +42,11 @@ Route::put('/pedido/{id_Pedido_PK}', [pedidoControlador::class, 'update']);
 Route::delete('/pedido/{id_Pedido_PK}', [pedidoControlador::class, 'destroy']);
 
 //admin
-Route::get('/administrador', [controladorAdmin::class, 'index']);
-Route::get('/administrador/{admi_Codigo_PK}', [controladorAdmin::class, 'show']);
-Route::post('/administrador', [controladorAdmin::class, 'store']);
-Route::delete('/administrador/{admi_Codigo_PK}', [controladorAdmin::class, 'destroy']);
-Route::put('/administrador/{admi_Codigo_PK}', [controladorAdmin::class, 'update']); 
+Route::get('/administrador', [ControladorAdmin::class, 'index']);
+Route::get('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'show']);
+Route::post('/administrador', [ControladorAdmin::class, 'store']);
+Route::delete('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'destroy']);
+Route::put('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'update']); 
 Route::post('/loginAdmin1', [loginAdminController::class, 'loginAdmin1']);
 
 //Producto

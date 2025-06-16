@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\adminModelo;
 use Illuminate\Support\Facades\Hash;
 use App\Models\loginAdmin;
-use Illuminate\Support\Facades\Validator; 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class controladorAdmin extends Controller
+class ControladorAdmin extends Controller
 {
     public function index()
     {
