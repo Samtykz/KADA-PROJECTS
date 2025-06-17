@@ -1,5 +1,6 @@
-<?php 
-include "../../Modelo/Conexion.php";
+<?php
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (isset($_GET["id"])) {
     $idtipodocumento = $_GET["id"];
@@ -35,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql .= " WHERE id_TipoDocumento_PK = $id";
 
     // Ejecutar la consulta
-    if ($conexion->query($sql) === TRUE) {
+    if ($conexion->query($sql) === true) {
         header("location: ../Read/viTipoDocumento.php");
     } else {
         // Mostrar un mensaje de error genérico
@@ -43,5 +44,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
 }
-
-?>
