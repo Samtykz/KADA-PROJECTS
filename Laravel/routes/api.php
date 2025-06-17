@@ -1,14 +1,16 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorCliente;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PedidoControlador; 
-use App\Http\Controllers\loginAdminController; 
+use App\Http\Controllers\PedidoControlador;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\ControladorAdmin;
 use App\Http\Controllers\DetalleControlador;
 use App\Http\Controllers\ProdControlador;
+
+// Definir constante para evitar duplicación del path
+const CLIENTE_DOC_PATH = '/cliente/{clie_Documento_PK}';
 
 /*
 |--------------------------------------------------------------------------
@@ -20,22 +22,21 @@ use App\Http\Controllers\ProdControlador;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::middleware(['cors'])->group(function () {
     Route::get('/cliente', [ControladorCliente::class, 'index']);
-    Route::get('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'show']);
+    Route::get(CLIENTE_DOC_PATH, [ControladorCliente::class, 'show']);
     Route::post('/cliente', [ControladorCliente::class, 'store']);
-    Route::delete('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'destroy']);
-    Route::put('/cliente/{clie_Documento_PK}', [ControladorCliente::class, 'update']); 
+    Route::delete(CLIENTE_DOC_PATH, [ControladorCliente::class, 'destroy']);
+    Route::put(CLIENTE_DOC_PATH, [ControladorCliente::class, 'update']);
     Route::post('/login', [LoginController::class, 'login']);
 });
 
 //Pedido
-Route::get('/pedido', [pedidoControlador::class, 'index']);
+Route::get('/pedido', [PedidoControlador::class, 'index']);
 Route::get('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'show']);
 Route::post('/pedido', [PedidoControlador::class, 'store']);
 Route::put('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'update']);
