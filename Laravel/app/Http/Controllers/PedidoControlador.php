@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pedidoModelo;
+use App\Models\PedidoModelo;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -10,7 +10,7 @@ class PedidoControlador extends Controller
 {
     public function index()
     {
-        $pedido = pedidoModelo::all();
+        $pedido = PedidoModelo::all();
         if ($pedido->isEmpty()) {
             return response()->json([
                 'message' => 'No hay pedidos registrados',
@@ -36,7 +36,7 @@ class PedidoControlador extends Controller
             ], 400);
         }
 
-        $pedido = pedidoModelo::create([
+        $pedido = PedidoModelo::create([
             'id_Pedido_PK' => $request->id_Pedido_PK,
             'fechaPedido' => $request->fechaPedido,
             'horaPedido' => $request->horaPedido,
@@ -56,7 +56,7 @@ class PedidoControlador extends Controller
         ], 201);
     }
     public function show($id_Pedido_PK){
-        $pedido = pedidoModelo::find($id_Pedido_PK);
+        $pedido = PedidoModelo::find($id_Pedido_PK);
         if(!$pedido){
             $data=[
             'message'=>'El Pedido no existe',
@@ -72,7 +72,7 @@ class PedidoControlador extends Controller
     }
 
     public function update(Request $request, $id_Pedido_PK){
-        $pedido=pedidoModelo::find($id_Pedido_PK);
+        $pedido=PedidoModelo::find($id_Pedido_PK);
         if(!$pedido){
             $data=[
                 'message'=>'Pedido no encontrado',
@@ -109,7 +109,7 @@ class PedidoControlador extends Controller
         
     }
     public function destroy($id_Pedido_PK){
-        $pedido = pedidoModelo::find($id_Pedido_PK);
+        $pedido = PedidoModelo::find($id_Pedido_PK);
         if(!$pedido){
             $data=[
             'message'=>'El Pedido no existe',
