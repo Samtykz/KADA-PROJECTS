@@ -1,5 +1,5 @@
 <?php
-include "../../Modelo/Conexion.php";
+include_once "../../Modelo/Conexion.php";
 
 
 // Obtener el ID del administrador desde la URL
@@ -12,7 +12,7 @@ if (isset($_GET["id"])) {
 
 // Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["id"]; 
+    $id = $_POST["id"];
     $nombre = $_POST["nombreNuevo"];
     $apellido = $_POST["apellidoNuevo"];
     $telefono = $_POST["telefonoNuevo"];
@@ -60,4 +60,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al actualizar el administrador: " . $conexion->error;
     }
 }
-?>
