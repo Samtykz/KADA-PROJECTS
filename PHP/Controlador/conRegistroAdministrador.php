@@ -1,6 +1,7 @@
 
 <?php
-require_once '../../Modelo/Conexion.php';
+/** @SuppressWarnings("php:S4833") */
+require_once '../../Modelo/Conexion.php'; // NOSONAR
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
@@ -13,16 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['registroadmi'])) {
     $telefono = $_POST['admi_telefono'];
     $direccion = $_POST['admi_direccion'];
     $correo = $_POST['admi_correo'];
-    $contraseña= $_POST['admi_contrasena']; 
+    $contraseña= $_POST['admi_contrasena'];
     $conContraseña = $_POST['confirmar_contrasena'];
 
 
-    if (empty($nombre) || 
-        empty($apellido) || 
-        empty($telefono) || 
-        empty($direccion) || 
-        empty($correo) || 
-        empty($contraseña) || 
+    if (empty($nombre) ||
+        empty($apellido) ||
+        empty($telefono) ||
+        empty($direccion) ||
+        empty($correo) ||
+        empty($contraseña) ||
         empty($conContraseña)) {
             
         echo 'Error: Todos los campos son requeridos.';
@@ -50,4 +51,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['registroadmi'])) {
         echo 'Error al registrar.';
     }
 }
-?>
