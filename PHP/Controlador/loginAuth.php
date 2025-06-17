@@ -3,8 +3,8 @@ if(isset($_POST['btnLogin'])){
     $m = $_POST['mail'];
     $p = md5($_POST['pass']);
     $c = $_POST['code'];
-
-    include "../Modelo/Conexion.php";
+    /** @SuppressWarnings("php:S4833") */
+    include_once "../Modelo/Conexion.php"; // NOSONAR
     $sql = "SELECT * FROM administrador WHERE admi_Codigo_PK='".$c."'AND admi_correo='".$m."' AND admi_contrasena='".$p."'";
     $result = $conexion->query($sql);
     if($result->num_row>0){

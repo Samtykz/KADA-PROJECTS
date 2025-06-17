@@ -5,7 +5,7 @@ include_once "../../Modelo/Conexion.php"; // NOSONAR
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
 
-    $sqlDetallePedido = $conexion->query("DELETE FROM detallePedido WHERE id_Pedido_FK IN (SELECT id_Pedido_PK FROM pedido WHERE clie_Documento_FK IN (SELECT clie_Documento_PK FROM cliente WHERE id_TipoDocumento_FK = $id))");  
+    $sqlDetallePedido = $conexion->query("DELETE FROM detallePedido WHERE id_Pedido_FK IN (SELECT id_Pedido_PK FROM pedido WHERE clie_Documento_FK IN (SELECT clie_Documento_PK FROM cliente WHERE id_TipoDocumento_FK = $id))"); 
     $sqlPedido = $conexion->query("DELETE FROM pedido WHERE clie_Documento_FK IN (SELECT clie_Documento_PK FROM cliente  WHERE id_TipoDocumento_FK = $id)");
     $sqlCliente = $conexion->query("DELETE FROM cliente WHERE id_TipoDocumento_FK = $id");
     $sqlTipoDocumento = $conexion->query("DELETE FROM tipoDocumento  WHERE id_TipoDocumento_PK = $id");

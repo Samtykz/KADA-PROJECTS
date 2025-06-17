@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include "../Modelo/Conexion.php"; // NOSONAR
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener datos del formulario
