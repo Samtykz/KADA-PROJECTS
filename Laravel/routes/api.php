@@ -47,7 +47,7 @@ Route::get('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'show'])
 Route::post('/administrador', [ControladorAdmin::class, 'store']);
 Route::delete('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'destroy']);
 Route::put('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'update']); 
-Route::post('/loginAdmin1', [loginAdminController::class, 'loginAdmin1']);
+Route::post('/loginAdmin1', [LoginAdminController::class, 'loginAdmin1']);
 
 //Producto
 Route::get('/producto', [ProdControlador::class, 'index']);
