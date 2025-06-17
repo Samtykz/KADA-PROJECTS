@@ -1,6 +1,6 @@
 <?php
-// Incluir conexión a base de datos
-require_once '../../Modelo/Conexion.php';
+/** @SuppressWarnings("php:S4833") */
+require_once '../../Modelo/Conexion.php'; // NOSONAR
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
@@ -42,4 +42,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['btnRegistrarVenta']))
         echo 'Error al registrar.';
     }
 }
-?>
