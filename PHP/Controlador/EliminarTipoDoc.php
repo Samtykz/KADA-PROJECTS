@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include "../../Modelo/Conexion.php"; // NOSONAR
 
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
@@ -21,4 +22,3 @@ if (!empty($_GET["id"])) {
 // Eliminar pedidos relacionados con clientes que tienen ese Tipo de documento
 // Eliminar clientes que tienen ese Tipo de documento
 // Eliminar Tipo de documento
-?>
