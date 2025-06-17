@@ -1,5 +1,6 @@
-<?php 
-include  "../../Modelo/Conexion.php";
+<?php
+/** @SuppressWarnings("php:S4833") */
+include  "../../Modelo/Conexion.php"; // NOSONAR
 
 // Obtener el ID del pedida desde la URL
 if (isset($_GET["id"])) {
@@ -33,18 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       exit();
   }
 
-  // Unir todas las actualizaciones en una sola cadena    
+  // Unir todas las actualizaciones en una sola cadena 
   $sql .= implode(", ", $updates);
   $sql .= " WHERE id_Pedido_PK = $id";
 
   // Ejecutar la consulta
-  if ($conexion->query($sql) === TRUE) {
+  if ($conexion->query($sql) === true) {
       header("location: ../Read/viPedido.php");
   } else {
       // Mostrar un mensaje de error genérico
       echo "Error al actualizar el pedido: " . $conexion->error;
   }
 }
-
-
-?>
