@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\prodModelo; 
-use Illuminate\Support\Facades\Validator; 
+use App\Models\prodModelo;
+use Illuminate\Support\Facades\Validator;
 
-class prodControlador extends Controller
+class ProdControlador extends Controller
 {
     public function index()
     {
@@ -36,3 +36,6 @@ class prodControlador extends Controller
         return response()->json($data,200);
     }
 }
+
+
+

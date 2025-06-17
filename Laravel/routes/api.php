@@ -8,7 +8,7 @@ use App\Http\Controllers\PedidoControlador;
 use App\Http\Controllers\loginAdminController; 
 use App\Http\Controllers\ControladorAdmin;
 use App\Http\Controllers\DetalleControlador;
-use App\Http\Controllers\prodControlador;
+use App\Http\Controllers\ProdControlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +50,8 @@ Route::put('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'update'
 Route::post('/loginAdmin1', [loginAdminController::class, 'loginAdmin1']);
 
 //Producto
-Route::get('/producto', [prodControlador::class, 'index']);
-Route::get('/producto/{prod_Codigo_PK}', [prodControlador::class, 'show']);
+Route::get('/producto', [ProdControlador::class, 'index']);
+Route::get('/producto/{prod_Codigo_PK}', [ProdControlador::class, 'show']);
 
 //Detalle
 Route::get('/detallepedido', [DetalleControlador::class, 'index']);
