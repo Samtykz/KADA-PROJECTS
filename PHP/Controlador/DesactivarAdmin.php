@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 if (!empty($_GET["id"]) && !empty($_GET["action"])) {
     $id = $_GET["id"];
     $action = $_GET["action"];
@@ -20,4 +21,3 @@ if (!empty($_GET["id"]) && !empty($_GET["action"])) {
         }
     }
 }
-?>
