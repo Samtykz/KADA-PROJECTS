@@ -38,6 +38,7 @@ CREATE TABLE `administrador` (
 --
 -- Volcado de datos para la tabla `administrador`
 --
+/** @SuppressWarnings("php:S4833") */
 INSERT INTO `administrador` (`admi_Codigo_PK`, `admi_nombre`, `admi_apellido`, `admi_telefono`, `admi_direccion`, `admi_correo`, `admi_contrasena`, `estado`) VALUES
 (1, 'Laura', 'González', '555-1234', 'Calle Mayor 45', 'laura.gonzalez@example.com', '', @ESTADO_ACTIVO),
 (2, 'Andrés', 'Martínez', '3102564879', 'Avenida de la Libertad 78', 'andres.martinez@example.com', '', @ESTADO_ACTIVO),
@@ -56,6 +57,8 @@ INSERT INTO `administrador` (`admi_Codigo_PK`, `admi_nombre`, `admi_apellido`, `
 (19, 'Eusebio', 'Bello', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
 (20, 'Roman', 'palmeraatricio', '3698741', 'Avenida palmera # 34B Norte', 'solitoTC@example.com', '$2y$12$mPLKKmUn2Xn47q419K/njOF8MI8ze1A0BMruQikyFSe2E0iqStdCC', @ESTADO_ACTIVO),
 (23, 'SANTIAGO', 'DIAZ GUEVARA', '3219170873', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', '$2y$10$FzNDuviXhjtVo7gizS2wfufTIMY3mMuiCon9ZprOye.c.G4LHxqPu', @ESTADO_ACTIVO);
+// NOSONAR
+
 -- --------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `cliente`
@@ -75,6 +78,7 @@ CREATE TABLE `cliente` (
 --
 -- Volcado de datos para la tabla `cliente`
 --
+/** @SuppressWarnings("php:S4833") */
 INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `clie_Telefono`, `clie_Telefono2`, `clie_direccion`, `clie_correo`, `id_TipoDocumento_FK`, `contrasena`, `estado`) VALUES
 ('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', @ESTADO_ACTIVO),
 ('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', @ESTADO_ACTIVO),
@@ -99,7 +103,7 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', @ESTADO_ACTIVO),
 ('7894561230', 'oscar', 'bello', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
 ('876157191', 'Carlos', 'Garnica', '3245625431', '12121212', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$./ck5U1O2SRwXFYwo1ZYO.DMYjfil7Jobo10Rm9bLZ8jB2WRpGPwC', @ESTADO_ACTIVO);
-
+// NOSONAR
 -- --------------------------------------------------------
 
 --
