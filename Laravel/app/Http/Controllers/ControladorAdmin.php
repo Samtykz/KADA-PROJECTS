@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\adminModelo;
 use Illuminate\Support\Facades\Hash;
-use App\Models\loginAdmin;
+use App\Models\LoginAdmin;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,7 +17,7 @@ class ControladorAdmin extends Controller
 
     public function index()
     {
-        $admi = loginAdmin::all();
+        $admi = LoginAdmin::all();
         if ($admi->isEmpty()) {
             return response()->json([
                 'message' => 'No hay administradores registrados',
@@ -46,7 +46,7 @@ class ControladorAdmin extends Controller
             ], 400);
         }
 
-        $admi = new loginAdmin();
+        $admi = new LoginAdmin();
         $admi->admi_Codigo_PK = $request->admi_Codigo_PK;
         $admi->admi_nombre = $request->admi_nombre;
         $admi->admi_apellido = $request->admi_apellido;
@@ -65,7 +65,7 @@ class ControladorAdmin extends Controller
 
     public function update(Request $request, $admi_Codigo_PK)
     {
-        $admi = loginAdmin::find($admi_Codigo_PK);
+        $admi = LoginAdmin::find($admi_Codigo_PK);
         if (!$admi) {
             return response()->json([
                 'message' => 'El administrador no existe',
@@ -107,7 +107,7 @@ class ControladorAdmin extends Controller
 
     public function destroy($admi_Codigo_PK)
     {
-        $admi = loginAdmin::find($admi_Codigo_PK);
+        $admi = LoginAdmin::find($admi_Codigo_PK);
         if (!$admi) {
             return response()->json([
                 'message' => 'El administrador no existe',

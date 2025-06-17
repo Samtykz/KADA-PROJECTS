@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\adminModelo;
 use Illuminate\Support\Facades\Hash;
-use App\Models\loginAdmin;
+use App\Models\LoginAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -13,7 +13,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class LoginAdminController extends Controller
 {
     // Método para iniciar sesión
-    public function loginAdmin1(Request $request)
+    public function LoginAdmin1(Request $request)
     {
         $response = null;
         $statusCode = null;
@@ -36,7 +36,7 @@ class LoginAdminController extends Controller
             $admi_correo = $request->admi_correo;
             $admi_contrasena = $request->admi_contrasena;
             // Buscar al cliente por correo
-            $admi = loginAdmin::where('admi_correo', $admi_correo)->first();
+            $admi = LoginAdmin::where('admi_correo', $admi_correo)->first();
             // Verificar si el cliente existe
             if (!$admi) {
                 $response = [
