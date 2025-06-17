@@ -17,6 +17,7 @@ SET time_zone = "+00:00";
 -- Definir constantes para los estados
 SET @ESTADO_ACTIVO = 'activo';
 SET @ESTADO_INACTIVO = 'inactivo';
+SET @APELLIDO_BELLO = 'bello';
 
 --
 -- Base de datos: `kadabd`
@@ -52,8 +53,8 @@ INSERT INTO `administrador` (`admi_Codigo_PK`, `admi_nombre`, `admi_apellido`, `
 (11, 'Carlos ', 'Chavez', '3103569456', 'Calle falsa 594', 'carlos@ejemplo.com', '$2y$10$NtAU.3OOV9mG/NShGwb17.UbkD.cIzZLVbRVxwPpp9H', @ESTADO_ACTIVO),
 (12, 'Santiago', 'Real', '3224828409', 'KRA 13 C BIS', 'realsantiago2404@gmail.com', 'e64b78fc3bc91bcbc7dc232ba8ec59e0', @ESTADO_ACTIVO),
 (14, 'David', 'Rodríguez', '3026724246', 'KRA 13C BIS ESTE', 'realsantiago2405@gmail.com', '25426deebf91380dd4e33d79eef0741a', @ESTADO_ACTIVO),
-(16, 'Martin', 'Bello', '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', @ESTADO_ACTIVO),
-(19, 'Eusebio', 'Bello', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
+(16, 'Martin', '@APELLIDO_BELLO', '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', @ESTADO_ACTIVO),
+(19, 'Eusebio', '@APELLIDO_BELLO', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
 (20, 'Roman', 'palmeraatricio', '3698741', 'Avenida palmera # 34B Norte', 'solitoTC@example.com', '$2y$12$mPLKKmUn2Xn47q419K/njOF8MI8ze1A0BMruQikyFSe2E0iqStdCC', @ESTADO_ACTIVO),
 (23, 'SANTIAGO', 'DIAZ GUEVARA', '3219170873', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', '$2y$10$FzNDuviXhjtVo7gizS2wfufTIMY3mMuiCon9ZprOye.c.G4LHxqPu', @ESTADO_ACTIVO);
 -- --------------------------------------------------------
@@ -79,7 +80,7 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', @ESTADO_ACTIVO),
 ('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', @ESTADO_ACTIVO),
 ('1019763323', 'David', 'Real', '5552006', '5552405', 'KRA 13C BIS ESTE', 'real@example.com', 1, '$2y$10$QzDQyZVGMSGtYss1p0ealefvq36nXA6oCQVZ6BR1Nc/', @ESTADO_ACTIVO),
-('1069473899', 'Eusebio', 'Bello', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
+('1069473899', 'Eusebio', '@APELLIDO_BELLO', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
 ('1098765256', 'Santiago', 'Diaz', '3214567172', '2727727', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', 1, '$2y$10$2xJUSOEJFlxymgL7R0zqX.0N.pRjNHZyvXuwx5R/wjbwqHK7/PB66', @ESTADO_ACTIVO),
 ('124562711', 'Samuel', 'Guevara', '3125676521', '23417122', 'Calle 54 #87 sur', 'Samuelito22@gmail.com', 1, '$2y$10$DB3pQ42src1TULXVCe/7..64wf4heix2nIMgXzioVOs5vfFMW5VKq', @ESTADO_ACTIVO),
 ('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', @ESTADO_ACTIVO),
@@ -97,7 +98,7 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('67890123', 'Monica', 'Acuña', '45776', '4567893', 'Calle 24', 'monica@ejemplo.com', 1, 'MonicaAc', @ESTADO_ACTIVO),
 ('785412369', 'Juan David', 'Romero Castaño', '3658945522', '3023697845', 'CALE 13', 'cataneda@gmail.com', 1, '789456', @ESTADO_ACTIVO),
 ('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', @ESTADO_ACTIVO),
-('7894561230', 'oscar', 'bello', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
+('7894561230', 'oscar', '@APELLIDO_BELLO', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
 ('876157191', 'Carlos', 'Garnica', '3245625431', '12121212', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$./ck5U1O2SRwXFYwo1ZYO.DMYjfil7Jobo10Rm9bLZ8jB2WRpGPwC', @ESTADO_ACTIVO);
 
 -- --------------------------------------------------------
