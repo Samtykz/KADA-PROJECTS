@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Validator;
 // Renombrar la clase para que siga el estándar de PascalCase
 class DetalleControlador extends Controller
 {
+    // Definir constante para la regla de validación reutilizada
+    private const RULE_REQUIRED_INT = 'required|int';
+
     public function index()
     {
         $detalle = detalleModelo::all();
@@ -23,11 +26,11 @@ class DetalleControlador extends Controller
     public function store(Request $request)
     {
         $validacion = Validator::make($request->all(), [
-            'cantidadProductoPedido' => 'required|int',
+            'cantidadProductoPedido' => self::RULE_REQUIRED_INT,
             'precioUnidadProducto' => 'required|numeric',
             'subtotalPedidoProducto' => 'required|numeric',
-            'id_Pedido_FK'  => 'required|int',
-            'prod_Codigo_FK'  => 'required|int',
+            'id_Pedido_FK'  => self::RULE_REQUIRED_INT,
+            'prod_Codigo_FK'  => self::RULE_REQUIRED_INT,
             'metodoPago'  => 'required|min:4|max:11'
         ]);
         if ($validacion->fails()) {
@@ -74,4 +77,5 @@ class DetalleControlador extends Controller
         return response()->json($data, 200);
     }
 }
+
 
