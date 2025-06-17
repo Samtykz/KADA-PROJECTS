@@ -15,12 +15,12 @@ class detalleControlador extends Controller
             return response()->json([
                 'message' => 'No hay detalles registrados',
                 'status' => 200
-            ], 200); 
+            ], 200);
         }
         return response()->json($detalle, 200);
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $validacion = Validator::make($request->all(), [
             'cantidadProductoPedido' => 'required|int',
@@ -35,7 +35,7 @@ class detalleControlador extends Controller
             return response()->json([
                 'message' => 'Error en la validación de datos',
                 'errors' => $validacion->errors(),
-                'status' => 400 
+                'status' => 400
             ], 400);
         }
 
@@ -50,7 +50,7 @@ class detalleControlador extends Controller
 
         if (!$detalle) {
             return response()->json([
-                'message' => 'Error al registrar el detalle', 
+                'message' => 'Error al registrar el detalle',
                 'status' => 500
             ], 500);
         }
