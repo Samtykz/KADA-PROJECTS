@@ -9,8 +9,9 @@ use App\Http\Controllers\ControladorAdmin;
 use App\Http\Controllers\DetalleControlador;
 use App\Http\Controllers\ProdControlador;
 
-// Definir constante para evitar duplicación del path
+// Definir constantes para evitar duplicación de paths
 const CLIENTE_DOC_PATH = '/cliente/{clie_Documento_PK}';
+const PEDIDO_ID_PATH = '/pedido/{id_Pedido_PK}';
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ const CLIENTE_DOC_PATH = '/cliente/{clie_Documento_PK}';
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 Route::middleware(['cors'])->group(function () {
     Route::get('/cliente', [ControladorCliente::class, 'index']);
     Route::get(CLIENTE_DOC_PATH, [ControladorCliente::class, 'show']);
@@ -34,21 +34,17 @@ Route::middleware(['cors'])->group(function () {
     Route::put(CLIENTE_DOC_PATH, [ControladorCliente::class, 'update']);
     Route::post('/login', [LoginController::class, 'login']);
 });
-
 //Pedido
 Route::get('/pedido', [PedidoControlador::class, 'index']);
-Route::get('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'show']);
+Route::get(PEDIDO_ID_PATH, [PedidoControlador::class, 'show']);
 Route::post('/pedido', [PedidoControlador::class, 'store']);
-Route::put('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'update']);
-Route::delete('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'destroy']);
-
+Route::put(PEDIDO_ID_PATH, [PedidoControlador::class, 'update']);
+Route::delete(PEDIDO_ID_PATH, [PedidoControlador::class, 'destroy']);
 //admin
 Route::get('/administrador', [ControladorAdmin::class, 'index']);
 Route::get('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'show']);
 Route::post('/administrador', [ControladorAdmin::class, 'store']);
 Route::delete('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'destroy']);
-Route::put('/administrador/{admi_Codigo_PK}', [ControladorAdmin::class, 'update']); 
-Route::post('/loginAdmin1', [LoginAdminController::class, 'loginAdmin1']);
 
 //Producto
 Route::get('/producto', [ProdControlador::class, 'index']);
