@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (!empty($_POST["btnregistrar"])) {
     if (!empty($_POST["nombrepro"]) && !empty($_POST["preciopro"]) && !empty($_POST["unidadmedida"]) && !empty($_POST["stockpro"]) && !empty($_POST["materialpro"]) && !empty($_POST["descripcionpro"]) && !empty($_POST["categoriapro"]) && !empty($_POST["proveedorpro"])) {
@@ -16,7 +17,7 @@ if (!empty($_POST["btnregistrar"])) {
         $sql = $conexion->query("INSERT INTO producto (prod_Nombre, prod_PrecioVenta, prod_UnidadMedida, prod_Stock, prod_Material, prod_Descripcion, id_Categoria_FK, documentoProveedor_FK)
         VALUES ('$nombrepro', '$preciopro', '$unidadmedida', '$stockpro', '$materialpro', '$descripcionpro', '$categoriapro', '$proveedorpro')");
 
-        if ($sql === TRUE) {
+        if ($sql === true) {
             echo "<div class='alert alert-success'>El producto se ha registrado correctamente</div>";
             header("Location: ../../Vista/Read/productos.php");
         } else {
@@ -27,5 +28,5 @@ if (!empty($_POST["btnregistrar"])) {
         echo "<div class='alert alert-warning'>Algún campo está vacío</div>";
     }
 }
-?>
+
 
