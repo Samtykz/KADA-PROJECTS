@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\clienteModelo;
+use App\Models\ClienteModelo;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class ControladorCliente extends Controller
 
     public function index()
     {
-        $cliente = clienteModelo::all();
+        $cliente = ClienteModelo::all();
         if ($cliente->isEmpty()) {
             return response()->json([
                 'message' => 'No hay clientes registrados',
@@ -46,7 +46,7 @@ class ControladorCliente extends Controller
             ], 400);
         }
 
-        $cliente = new clienteModelo();
+        $cliente = new ClienteModelo();
         $cliente->clie_Documento_PK = $request->clie_Documento_PK;
         $cliente->clie_nombre = $request->clie_nombre;
         $cliente->clie_apellido = $request->clie_apellido;
@@ -67,7 +67,7 @@ class ControladorCliente extends Controller
 
     public function update(Request $request, $clie_Documento_PK)
     {
-        $cliente = clienteModelo::find($clie_Documento_PK);
+        $cliente = ClienteModelo::find($clie_Documento_PK);
         if (!$cliente) {
             $data = [
                 'message' => 'El cliente no existe',
@@ -110,7 +110,7 @@ class ControladorCliente extends Controller
     //eliminar
     public function destroy($clie_Documento_PK)
     {
-        $cliente = clienteModelo::find($clie_Documento_PK);
+        $cliente = ClienteModelo::find($clie_Documento_PK);
         if (!$cliente) {
             $data = [
                 'message' => 'El cliente no existe',
