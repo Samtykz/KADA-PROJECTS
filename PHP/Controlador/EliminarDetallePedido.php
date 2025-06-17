@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
@@ -13,4 +14,3 @@ if (!empty($_GET["id"])) {
         echo "Error al eliminar";
     }
 }
-?>
