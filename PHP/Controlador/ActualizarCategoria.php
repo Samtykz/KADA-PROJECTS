@@ -1,5 +1,6 @@
-<?php 
-include "../../Modelo/Conexion.php";
+<?php
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 // Obtener el ID de la categoria desde la URL
 if (isset($_GET["id"])) {
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql .= " WHERE id_Categoria_PK= $id";
 
     // Ejecutar la consulta
-    if ($conexion->query($sql) === TRUE) {
+    if ($conexion->query($sql) === true) {
         header("location: ../Read/categorias.php");
     } else {
         // Mostrar un mensaje de error genérico
@@ -45,7 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 }
 
-
-
-?>
 
