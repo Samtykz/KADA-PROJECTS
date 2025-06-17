@@ -6,27 +6,25 @@
 -- Tiempo de generación: 22-04-2025 a las 06:38:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- Definir constantes para los estados
+SET @ESTADO_ACTIVO = 'activo';
+SET @ESTADO_INACTIVO = 'inactivo';
+
 --
 -- Base de datos: `kadabd`
 --
-
 -- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `administrador`
 --
-
 CREATE TABLE `administrador` (
   `admi_Codigo_PK` int(11) NOT NULL,
   `admi_nombre` varchar(50) NOT NULL,
@@ -35,62 +33,33 @@ CREATE TABLE `administrador` (
   `admi_direccion` varchar(50) NOT NULL,
   `admi_correo` varchar(50) NOT NULL,
   `admi_contrasena` varchar(100) NOT NULL,
-  `estado` enum('activo','inactivo') DEFAULT 'activo'
+  `estado` enum('activo','inactivo') DEFAULT @ESTADO_ACTIVO
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Volcado de datos para la tabla `administrador`
 --
-
 INSERT INTO `administrador` (`admi_Codigo_PK`, `admi_nombre`, `admi_apellido`, `admi_telefono`, `admi_direccion`, `admi_correo`, `admi_contrasena`, `estado`) VALUES
-(1, 'Laura', 'González', '555-1234', 'Calle Mayor 45', 'laura.gonzalez@example.com', '', 'activo'),
-(2, 'Andrés', 'Martínez', '3102564879', 'Avenida de la Libertad 78', 'andres.martinez@example.com', '', 'activo'),
-(3, 'Marta', 'Pérez', '555-8765', 'Calle de la Reina 12', 'marta.perez@example.com', '', 'activo'),
-(4, 'Javier', 'Rodríguez', '555-4321', 'Carrera 23C # 34-56 Norte', 'javier.rodriguez@example.com', '', 'activo'),
-(5, 'Isabel', 'López', '555-3456', 'Calle 34-87', 'isabel.lopez@example.com', '', 'activo'),
-(6, 'Sergio', 'Fernández', '555-6543', 'Avenida Chile # 34B Norte', 'sergio.fernandez@example.com', '', 'activo'),
-(7, 'Elena', 'Gómez', '555-7890', 'Carrera 34L Norte', 'elena.gomez@example.com', '', 'activo'),
-(8, 'Manuel', 'Jimenez', '555-2109', 'Calle 23-45', 'manueljimenez@example.com', '', 'activo'),
-(9, 'Claudia', 'Ruiz', '555-0987', 'Calle de los Ángeles 44', 'claudia.ruiz@example.com', '', 'activo'),
-(10, 'Francisco', 'Ortega', '555-4320', 'Calle de la Paz 67, Salamanca', 'francisco.ortega@example.com', '', 'activo'),
-(11, 'Carlos ', 'Chavez', '3103569456', 'Calle falsa 594', 'carlos@ejemplo.com', '$2y$10$NtAU.3OOV9mG/NShGwb17.UbkD.cIzZLVbRVxwPpp9H', 'activo'),
-(12, 'Santiago', 'Real', '3224828409', 'KRA 13 C BIS', 'realsantiago2404@gmail.com', 'e64b78fc3bc91bcbc7dc232ba8ec59e0', 'activo'),
-(14, 'David', 'Rodríguez', '3026724246', 'KRA 13C BIS ESTE', 'realsantiago2405@gmail.com', '25426deebf91380dd4e33d79eef0741a', 'activo'),
-(16, 'Martin', 'Bello', '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', 'activo'),
-(19, 'Eusebio', 'Bello', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', 'activo'),
-(20, 'Roman', 'palmeraatricio', '3698741', 'Avenida palmera # 34B Norte', 'solitoTC@example.com', '$2y$12$mPLKKmUn2Xn47q419K/njOF8MI8ze1A0BMruQikyFSe2E0iqStdCC', 'activo'),
-(23, 'SANTIAGO', 'DIAZ GUEVARA', '3219170873', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', '$2y$10$FzNDuviXhjtVo7gizS2wfufTIMY3mMuiCon9ZprOye.c.G4LHxqPu', 'activo');
-
+(1, 'Laura', 'González', '555-1234', 'Calle Mayor 45', 'laura.gonzalez@example.com', '', @ESTADO_ACTIVO),
+(2, 'Andrés', 'Martínez', '3102564879', 'Avenida de la Libertad 78', 'andres.martinez@example.com', '', @ESTADO_ACTIVO),
+(3, 'Marta', 'Pérez', '555-8765', 'Calle de la Reina 12', 'marta.perez@example.com', '', @ESTADO_ACTIVO),
+(4, 'Javier', 'Rodríguez', '555-4321', 'Carrera 23C # 34-56 Norte', 'javier.rodriguez@example.com', '', @ESTADO_ACTIVO),
+(5, 'Isabel', 'López', '555-3456', 'Calle 34-87', 'isabel.lopez@example.com', '', @ESTADO_ACTIVO),
+(6, 'Sergio', 'Fernández', '555-6543', 'Avenida Chile # 34B Norte', 'sergio.fernandez@example.com', '', @ESTADO_ACTIVO),
+(7, 'Elena', 'Gómez', '555-7890', 'Carrera 34L Norte', 'elena.gomez@example.com', '', @ESTADO_ACTIVO),
+(8, 'Manuel', 'Jimenez', '555-2109', 'Calle 23-45', 'manueljimenez@example.com', '', @ESTADO_ACTIVO),
+(9, 'Claudia', 'Ruiz', '555-0987', 'Calle de los Ángeles 44', 'claudia.ruiz@example.com', '', @ESTADO_ACTIVO),
+(10, 'Francisco', 'Ortega', '555-4320', 'Calle de la Paz 67, Salamanca', 'francisco.ortega@example.com', '', @ESTADO_ACTIVO),
+(11, 'Carlos ', 'Chavez', '3103569456', 'Calle falsa 594', 'carlos@ejemplo.com', '$2y$10$NtAU.3OOV9mG/NShGwb17.UbkD.cIzZLVbRVxwPpp9H', @ESTADO_ACTIVO),
+(12, 'Santiago', 'Real', '3224828409', 'KRA 13 C BIS', 'realsantiago2404@gmail.com', 'e64b78fc3bc91bcbc7dc232ba8ec59e0', @ESTADO_ACTIVO),
+(14, 'David', 'Rodríguez', '3026724246', 'KRA 13C BIS ESTE', 'realsantiago2405@gmail.com', '25426deebf91380dd4e33d79eef0741a', @ESTADO_ACTIVO),
+(16, 'Martin', 'Bello', '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', @ESTADO_ACTIVO),
+(19, 'Eusebio', 'Bello', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
+(20, 'Roman', 'palmeraatricio', '3698741', 'Avenida palmera # 34B Norte', 'solitoTC@example.com', '$2y$12$mPLKKmUn2Xn47q419K/njOF8MI8ze1A0BMruQikyFSe2E0iqStdCC', @ESTADO_ACTIVO),
+(23, 'SANTIAGO', 'DIAZ GUEVARA', '3219170873', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', '$2y$10$FzNDuviXhjtVo7gizS2wfufTIMY3mMuiCon9ZprOye.c.G4LHxqPu', @ESTADO_ACTIVO);
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cache`
---
-
-CREATE TABLE `cache` (
-  `key` varchar(255) NOT NULL,
-  `value` mediumtext NOT NULL,
-  `expiration` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cache_locks`
---
-
-CREATE TABLE `cache_locks` (
-  `key` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `expiration` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `cliente`
 --
-
 CREATE TABLE `cliente` (
   `clie_Documento_PK` varchar(20) NOT NULL,
   `clie_nombre` varchar(50) NOT NULL,
@@ -101,37 +70,35 @@ CREATE TABLE `cliente` (
   `clie_correo` varchar(50) NOT NULL,
   `id_TipoDocumento_FK` int(11) NOT NULL,
   `contrasena` varchar(100) NOT NULL,
-  `estado` enum('activo','inactivo') DEFAULT 'activo'
+  `estado` enum('activo','inactivo') DEFAULT @ESTADO_ACTIVO
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Volcado de datos para la tabla `cliente`
 --
-
 INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `clie_Telefono`, `clie_Telefono2`, `clie_direccion`, `clie_correo`, `id_TipoDocumento_FK`, `contrasena`, `estado`) VALUES
-('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', 'activo'),
-('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', 'activo'),
-('1019763323', 'David', 'Real', '5552006', '5552405', 'KRA 13C BIS ESTE', 'real@example.com', 1, '$2y$10$QzDQyZVGMSGtYss1p0ealefvq36nXA6oCQVZ6BR1Nc/', 'activo'),
-('1069473899', 'Eusebio', 'Bello', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', 'activo'),
-('1098765256', 'Santiago', 'Diaz', '3214567172', '2727727', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', 1, '$2y$10$2xJUSOEJFlxymgL7R0zqX.0N.pRjNHZyvXuwx5R/wjbwqHK7/PB66', 'activo'),
-('124562711', 'Samuel', 'Guevara', '3125676521', '23417122', 'Calle 54 #87 sur', 'Samuelito22@gmail.com', 1, '$2y$10$DB3pQ42src1TULXVCe/7..64wf4heix2nIMgXzioVOs5vfFMW5VKq', 'activo'),
-('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', 'activo'),
-('1456456455', 'eusebio', 'topollillo', '4658433', '5552490', 'KRA 82C #45-07 SUR', 'sabrooso@example.com', 1, '123456', 'activo'),
-('14569876', 'mssi', 'kaka', '58423', '78963', 'KRA 13C bsite', 'romero@example.com', 1, 'abeja', 'activo'),
-('212123111', 'Carlos', 'Garcia', '2312312311', '122312', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$LVpw2KD3m2T2q26llwGbL.ZJ21j131PcPztMY1LotqvbXW7.VQEda', 'activo'),
-('3214567252', 'Carlos', 'Garcia', '2312312311', '12312112', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$2Lr0KARX14G75gJKEJjOw.nE0l3uV5hwDMOxjvHu7i7wXghOjQJKW', 'activo'),
-('3242343423', 'louis samuel santiago', 'diaz rodriguez bello', '313213133', '4124342324', 'localhost', 'salchichon@gmail.com', 1, '789456', 'activo'),
-('456789', 'Maria', 'Gomez', '23455839', '43562783', 'CALLE 84 SUR #92-85', 'mariahsga@gmail.com', 1, 'gfdgfghj', 'activo'),
-('45678901', 'Ana', 'García', '3219170873', '3425617286', 'CALLE 85 SUR #92-85', 'analucia4@gmail.com', 1, 'gfdgfghj', 'activo'),
-('48564564564', 'Juan David', 'Romero Castaño', '645546564', '45465456', 'call3 K8', 'juaandavid@gmail.com', 1, '3053652257', 'activo'),
-('4866856', 'fdsdfs', 'hdgsgs', '75757', '67375', 'calle 22 avenida dorado', 'jsudus@example.com', 1, '7896', 'activo'),
-('546987123', 'Samuel', 'Toquica', '665478912', '78541236', 'CHIPRE AVENIDA 60', 'toquisam@gmail.com', 1, '$2y$12$JqV14Jq8LsVSLLpUBoa5vezb/47H.DP26Sdg8Vlq7HKBqJiF3RS/y', 'activo'),
-('56789012', 'Javier', 'Pérez', '5555432', '5559876', 'Calle del Carmen 890', 'javier.perez@example.com', 3, '', 'activo'),
-('67890123', 'Monica', 'Acuña', '45776', '4567893', 'Calle 24', 'monica@ejemplo.com', 1, 'MonicaAc', 'activo'),
-('785412369', 'Juan David', 'Romero Castaño', '3658945522', '3023697845', 'CALE 13', 'cataneda@gmail.com', 1, '789456', 'activo'),
-('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', 'activo'),
-('7894561230', 'oscar', 'bello', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', 'activo'),
-('876157191', 'Carlos', 'Garnica', '3245625431', '12121212', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$./ck5U1O2SRwXFYwo1ZYO.DMYjfil7Jobo10Rm9bLZ8jB2WRpGPwC', 'activo');
+('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', @ESTADO_ACTIVO),
+('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', @ESTADO_ACTIVO),
+('1019763323', 'David', 'Real', '5552006', '5552405', 'KRA 13C BIS ESTE', 'real@example.com', 1, '$2y$10$QzDQyZVGMSGtYss1p0ealefvq36nXA6oCQVZ6BR1Nc/', @ESTADO_ACTIVO),
+('1069473899', 'Eusebio', 'Bello', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
+('1098765256', 'Santiago', 'Diaz', '3214567172', '2727727', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', 1, '$2y$10$2xJUSOEJFlxymgL7R0zqX.0N.pRjNHZyvXuwx5R/wjbwqHK7/PB66', @ESTADO_ACTIVO),
+('124562711', 'Samuel', 'Guevara', '3125676521', '23417122', 'Calle 54 #87 sur', 'Samuelito22@gmail.com', 1, '$2y$10$DB3pQ42src1TULXVCe/7..64wf4heix2nIMgXzioVOs5vfFMW5VKq', @ESTADO_ACTIVO),
+('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', @ESTADO_ACTIVO),
+('1456456455', 'eusebio', 'topollillo', '4658433', '5552490', 'KRA 82C #45-07 SUR', 'sabrooso@example.com', 1, '123456', @ESTADO_ACTIVO),
+('14569876', 'mssi', 'kaka', '58423', '78963', 'KRA 13C bsite', 'romero@example.com', 1, 'abeja', @ESTADO_ACTIVO),
+('212123111', 'Carlos', 'Garcia', '2312312311', '122312', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$LVpw2KD3m2T2q26llwGbL.ZJ21j131PcPztMY1LotqvbXW7.VQEda', @ESTADO_ACTIVO),
+('3214567252', 'Carlos', 'Garcia', '2312312311', '12312112', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$2Lr0KARX14G75gJKEJjOw.nE0l3uV5hwDMOxjvHu7i7wXghOjQJKW', @ESTADO_ACTIVO),
+('3242343423', 'louis samuel santiago', 'diaz rodriguez bello', '313213133', '4124342324', 'localhost', 'salchichon@gmail.com', 1, '789456', @ESTADO_ACTIVO),
+('456789', 'Maria', 'Gomez', '23455839', '43562783', 'CALLE 84 SUR #92-85', 'mariahsga@gmail.com', 1, 'gfdgfghj', @ESTADO_ACTIVO),
+('45678901', 'Ana', 'García', '3219170873', '3425617286', 'CALLE 85 SUR #92-85', 'analucia4@gmail.com', 1, 'gfdgfghj', @ESTADO_ACTIVO),
+('48564564564', 'Juan David', 'Romero Castaño', '645546564', '45465456', 'call3 K8', 'juaandavid@gmail.com', 1, '3053652257', @ESTADO_ACTIVO),
+('4866856', 'fdsdfs', 'hdgsgs', '75757', '67375', 'calle 22 avenida dorado', 'jsudus@example.com', 1, '7896', @ESTADO_ACTIVO),
+('546987123', 'Samuel', 'Toquica', '665478912', '78541236', 'CHIPRE AVENIDA 60', 'toquisam@gmail.com', 1, '$2y$12$JqV14Jq8LsVSLLpUBoa5vezb/47H.DP26Sdg8Vlq7HKBqJiF3RS/y', @ESTADO_ACTIVO),
+('56789012', 'Javier', 'Pérez', '5555432', '5559876', 'Calle del Carmen 890', 'javier.perez@example.com', 3, '', @ESTADO_ACTIVO),
+('67890123', 'Monica', 'Acuña', '45776', '4567893', 'Calle 24', 'monica@ejemplo.com', 1, 'MonicaAc', @ESTADO_ACTIVO),
+('785412369', 'Juan David', 'Romero Castaño', '3658945522', '3023697845', 'CALE 13', 'cataneda@gmail.com', 1, '789456', @ESTADO_ACTIVO),
+('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', @ESTADO_ACTIVO),
+('7894561230', 'oscar', 'bello', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
+('876157191', 'Carlos', 'Garnica', '3245625431', '12121212', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$./ck5U1O2SRwXFYwo1ZYO.DMYjfil7Jobo10Rm9bLZ8jB2WRpGPwC', @ESTADO_ACTIVO);
 
 -- --------------------------------------------------------
 
