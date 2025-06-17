@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Insertar detalles del pedido
     foreach ($carrito as $producto) {
-        $sql = "INSERT INTO detallePedido (id_pedido, codigo_producto, cantidad, precio_unitario, metodo_pago) 
+        $sql = "INSERT INTO detallePedido (id_pedido, codigo_producto, cantidad, precio_unitario, metodo_pago)
                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
         $stmt->execute([
@@ -35,4 +35,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: thankyou.html");
     exit();
 }
-?>
