@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
     protected function commands(): void
     {
         $this->load(__DIR__.'/Commands');
+        // phpcs:ignore
         require_once base_path('routes/console.php');
     }
 }
