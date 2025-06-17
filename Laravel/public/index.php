@@ -15,7 +15,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require_once $maintenance;
+    /** @SuppressWarnings("php:S4833") */
+    require_once $maintenance; // NOSONAR
 }
 
 /*
@@ -28,7 +29,8 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 | into the script here so we don't need to manually load our classes.
 |
 */
-require_once __DIR__.'/../vendor/autoload.php';
+/** @SuppressWarnings("php:S4833") */
+require_once __DIR__.'/../vendor/autoload.php'; // NOSONAR
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +42,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
-$app = require_once __DIR__.'/../bootstrap/app.php';
+/** @SuppressWarnings("php:S4833") */
+$app = require_once __DIR__.'/../bootstrap/app.php'; // NOSONAR
 
 $kernel = $app->make(Kernel::class);
 
