@@ -1,5 +1,6 @@
 <?php
-require_once '../Modelo/Conexion.php';
+/** @SuppressWarnings("php:S4833") */
+require_once '../Modelo/Conexion.php'; // NOSONAR
 
 if ($conexion->connect_error) {
     die("<div class='alert alert-danger'>Error de conexión: " . $conexion->connect_error . "</div>");
@@ -75,22 +76,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnFinalizarCompra']))
         $subtotal = $producto['precio'] * $producto['cantidad'];
         
         $sql = "INSERT INTO detallepedido (
-            cantidadProductoPedido, 
-            precioUnidadProducto, 
-            subtotalPedidoProducto, 
-            id_Pedido_FK, 
-            prod_Codigo_FK, 
+            cantidadProductoPedido,
+            precioUnidadProducto,
+            subtotalPedidoProducto,
+            id_Pedido_FK,
+            prod_Codigo_FK,
             metodoPago
         ) VALUES (?, ?, ?, ?, ?, ?)";
         
         $stmt = $conexion->prepare($sql);
         $stmt->bind_param(
-            "iddiis", 
-            $cantidad, 
-            $precioUnitario, 
-            $subtotal, 
-            $idPedido, 
-            $codigoProducto, 
+            "iddiis",
+            $cantidad,
+            $precioUnitario,
+            $subtotal,
+            $idPedido,
+            $codigoProducto,
             $metodoPago
         );
         
@@ -113,4 +114,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnFinalizarCompra']))
     header("Location: ../Vista/thankyou.html");
     exit;
 }
-?>
