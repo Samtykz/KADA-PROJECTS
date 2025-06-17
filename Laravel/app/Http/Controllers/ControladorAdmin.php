@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use App\Models\adminModelo;
 use Illuminate\Support\Facades\Hash;
 use App\Models\loginAdmin;
@@ -9,8 +10,10 @@ use Illuminate\Routing\Controller;
 
 class ControladorAdmin extends Controller
 {
-    // Definir constante para la regla de validación reutilizada
+    // Definir constantes para las reglas de validación reutilizadas
     private const RULE_REQUIRED_MIN2_MAX12 = 'required|min:2|max:12';
+    private const RULE_REQUIRED_MIN2_MAX40 = 'required|min:2|max:40';
+    private const RULE_REQUIRED_MIN2_MAX60 = 'required|min:2|max:60';
 
     public function index()
     {
@@ -23,14 +26,15 @@ class ControladorAdmin extends Controller
         }
         return response()->json($admi, 200);
     }
+
     public function store(Request $request)
     {
         $validacion = Validator::make($request->all(), [
             'admi_Codigo_PK' => self::RULE_REQUIRED_MIN2_MAX12,
-            'admi_nombre' => 'required|min:2|max:40',
-            'admi_apellido' => 'required|min:2|max:40',
+            'admi_nombre' => self::RULE_REQUIRED_MIN2_MAX40,
+            'admi_apellido' => self::RULE_REQUIRED_MIN2_MAX40,
             'admi_telefono' => self::RULE_REQUIRED_MIN2_MAX12,
-            'admi_direccion' => 'required|min:2|max:60',
+            'admi_direccion' => self::RULE_REQUIRED_MIN2_MAX60,
             'admi_correo' => 'required|email',
             'admi_contrasena' => 'required|string|min:6',
         ]);
@@ -41,27 +45,25 @@ class ControladorAdmin extends Controller
                 'status' => 400
             ], 400);
         }
-        $admi = loginAdmin::create([
-            'admi_Codigo_PK' => $request->admi_Codigo_PK,
-            'admi_nombre' => $request->admi_nombre,
-            'admi_apellido' => $request->admi_apellido,
-            'admi_telefono' => $request->admi_telefono,
-            'admi_direccion' => $request->admi_direccion,
-            'admi_correo' => $request->admi_correo,
-            'admi_contrasena' => Hash::make($request->admi_contrasena),
-        ]);
-        if (!$admi) {
-            return response()->json([
-                'message' => 'Error al registrar Administrador',
-                'status' => 500
-            ], 500);
-        }
+
+        $admi = new loginAdmin();
+        $admi->admi_Codigo_PK = $request->admi_Codigo_PK;
+        $admi->admi_nombre = $request->admi_nombre;
+        $admi->admi_apellido = $request->admi_apellido;
+        $admi->admi_telefono = $request->admi_telefono;
+        $admi->admi_direccion = $request->admi_direccion;
+        $admi->admi_correo = $request->admi_correo;
+        $admi->admi_contrasena = Hash::make($request->admi_contrasena);
+        $admi->save();
+
         return response()->json([
+            'message' => 'Administrador registrado',
             'administrador' => $admi,
             'status' => 201
         ], 201);
     }
-    public function show($admi_Codigo_PK)
+
+    public function update(Request $request, $admi_Codigo_PK)
     {
         $admi = loginAdmin::find($admi_Codigo_PK);
         if (!$admi) {
@@ -70,26 +72,13 @@ class ControladorAdmin extends Controller
                 'status' => 404
             ], 404);
         }
-        return response()->json([
-            'administrador' => $admi,
-            'status' => 200
-        ], 200);
-    }
-    public function update(Request $request, $admi_Codigo_PK)
-    {
-        $admi = loginAdmin::find($admi_Codigo_PK);
-        if (!$admi) {
-            return response()->json([
-                'message' => 'Administrador no encontrado',
-                'status' => 404
-            ], 404);
-        }
+
         $validacion = Validator::make($request->all(), [
             'admi_Codigo_PK' => self::RULE_REQUIRED_MIN2_MAX12,
-            'admi_nombre' => 'required|min:2|max:40',
-            'admi_apellido' => 'required|min:2|max:40',
+            'admi_nombre' => self::RULE_REQUIRED_MIN2_MAX40,
+            'admi_apellido' => self::RULE_REQUIRED_MIN2_MAX40,
             'admi_telefono' => self::RULE_REQUIRED_MIN2_MAX12,
-            'admi_direccion' => 'required|min:2|max:60',
+            'admi_direccion' => self::RULE_REQUIRED_MIN2_MAX60,
             'admi_correo' => 'required|email',
             'admi_contrasena' => 'required|string|min:6',
         ]);
@@ -100,6 +89,7 @@ class ControladorAdmin extends Controller
                 'status' => 400
             ], 400);
         }
+
         $admi->admi_Codigo_PK = $request->admi_Codigo_PK;
         $admi->admi_nombre = $request->admi_nombre;
         $admi->admi_apellido = $request->admi_apellido;
@@ -114,6 +104,7 @@ class ControladorAdmin extends Controller
             'status' => 200
         ], 200);
     }
+
     public function destroy($admi_Codigo_PK)
     {
         $admi = loginAdmin::find($admi_Codigo_PK);
