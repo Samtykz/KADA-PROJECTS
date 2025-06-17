@@ -123,6 +123,6 @@ class PedidoControlador extends Controller
             'status'=>200
         ];
         return response()->json($data,200);
-    } 
+    }
 }
 
