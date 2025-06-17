@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pedidoModelo; 
-use Illuminate\Support\Facades\Validator; 
+use App\Models\pedidoModelo;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
-class PedidoControlador extends Controller 
+class PedidoControlador extends Controller
 {
     public function index()
     {
@@ -15,12 +15,12 @@ class PedidoControlador extends Controller
             return response()->json([
                 'message' => 'No hay pedidos registrados',
                 'status' => 200
-            ], 200); 
+            ], 200);
         }
         return response()->json($pedido, 200);
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $validacion = Validator::make($request->all(), [
             'fechaPedido' => 'required|date',
@@ -32,20 +32,20 @@ class PedidoControlador extends Controller
             return response()->json([
                 'message' => 'Error en la validación de datos',
                 'errors' => $validacion->errors(),
-                'status' => 400 
+                'status' => 400
             ], 400);
         }
 
         $pedido = pedidoModelo::create([
             'id_Pedido_PK' => $request->id_Pedido_PK,
-            'fechaPedido' => $request->fechaPedido,  
-            'horaPedido' => $request->horaPedido, 
+            'fechaPedido' => $request->fechaPedido,
+            'horaPedido' => $request->horaPedido,
             'clie_Documento_FK' => $request->clie_Documento_FK
         ]);
 
         if (!$pedido) {
             return response()->json([
-                'message' => 'Error al registrar el Pedido', 
+                'message' => 'Error al registrar el Pedido',
                 'status' => 500
             ], 500);
         }
@@ -85,7 +85,7 @@ class PedidoControlador extends Controller
             //'id_Pedido_PK' => $request->id_Pedido_PK,
             'fechaPedido' => 'required|date',
             'horaPedido' => 'required|date_format:H:i',
-            'clie_Documento_FK' => 'required|min:4|max:20' 
+            'clie_Documento_FK' => 'required|min:4|max:20'
         ]);
         if($validacion->fails()){
             $data=[
@@ -95,7 +95,7 @@ class PedidoControlador extends Controller
             ];
             return response()->json($data,400);
         }
-        //$pedido->id_Pedido_PK=$request->id_Pedido_PK;
+
         $pedido->fechaPedido=$request->fechaPedido;
         $pedido->horaPedido=$request->horaPedido;
         $pedido->clie_Documento_FK=$request->clie_Documento_FK;
@@ -125,3 +125,4 @@ class PedidoControlador extends Controller
         return response()->json($data,200);
     } 
 }
+
