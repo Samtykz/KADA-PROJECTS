@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\detalleModelo;
+use App\Models\DetalleModelo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,7 +13,7 @@ class DetalleControlador extends Controller
 
     public function index()
     {
-        $detalle = detalleModelo::all();
+        $detalle = DetalleModelo::all();
         if ($detalle->isEmpty()) {
             return response()->json([
                 'message' => 'No hay detalles registrados',
@@ -40,7 +40,7 @@ class DetalleControlador extends Controller
                 'status' => 400
             ], 400);
         }
-        $detalle = detalleModelo::create([
+        $detalle = DetalleModelo::create([
             'cantidadProductoPedido' => $request->cantidadProductoPedido,
             'precioUnidadProducto' => $request->precioUnidadProducto,
             'subtotalPedidoProducto' => $request->subtotalPedidoProducto,
@@ -62,7 +62,7 @@ class DetalleControlador extends Controller
 
     public function show($id_Pedido_FK)
     {
-        $detalle = detalleModelo::find($id_Pedido_FK);
+        $detalle = DetalleModelo::find($id_Pedido_FK);
         if (!$detalle) {
             $data = [
                 'message' => 'El detalle no existe',
