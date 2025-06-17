@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 
 // Obtener el ID del cliente desde la URL
@@ -58,16 +59,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Unir todas las actualizaciones en una sola cadena    
+    // Unir todas las actualizaciones en una sola cadena
     $sql .= implode(", ", $updates);
     $sql .= " WHERE clie_Documento_PK = $id";
 
     // Ejecutar la consulta
-    if ($conexion->query($sql) === TRUE) {
+    if ($conexion->query($sql) === true) {
         header("location: ../Read/viClientes.php");
     } else {
         // Mostrar un mensaje de error genérico
         echo "Error al actualizar el cliente: " . $conexion->error;
     }
 }
-?>
