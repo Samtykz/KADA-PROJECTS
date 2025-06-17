@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       exit();
   }
 
-  // Unir todas las actualizaciones en una sola cadena 
+  // Unir todas las actualizaciones en una sola cadena
   $sql .= implode(", ", $updates);
   $sql .= " WHERE id_Pedido_PK = $id";
 
