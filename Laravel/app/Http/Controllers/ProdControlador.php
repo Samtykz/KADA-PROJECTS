@@ -15,7 +15,7 @@ class ProdControlador extends Controller
             return response()->json([
                 'message' => 'No hay productos registrados',
                 'status' => 200
-            ], 200); 
+            ], 200);
         }
         return response()->json($producto, 200);
     }
