@@ -7,7 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\pedidoControlador; 
 use App\Http\Controllers\loginAdminController; 
 use App\Http\Controllers\ControladorAdmin;
-use App\Http\Controllers\detalleControlador;
+use App\Http\Controllers\DetalleControlador;
 use App\Http\Controllers\prodControlador;
 
 /*
@@ -54,5 +54,5 @@ Route::get('/producto', [prodControlador::class, 'index']);
 Route::get('/producto/{prod_Codigo_PK}', [prodControlador::class, 'show']);
 
 //Detalle
-Route::get('/detallepedido', [detalleControlador::class, 'index']);
-Route::post('/detallepedido', [detalleControlador::class, 'store']);
+Route::get('/detallepedido', [DetalleControlador::class, 'index']);
+Route::post('/detallepedido', [DetalleControlador::class, 'store']);
