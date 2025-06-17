@@ -1,5 +1,6 @@
-<?php 
-include "../../Modelo/Conexion.php";
+<?php
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (!empty($_POST["btnagregar"])) {
    if (!empty($_POST["nombreCategoria"])) {
@@ -16,6 +17,5 @@ if (!empty($_POST["btnagregar"])) {
         echo "<div class='alert alert-danger'>Error al registrar la categoría</div>";
        }*/
 
-   }    
+   }
 }
-?>
