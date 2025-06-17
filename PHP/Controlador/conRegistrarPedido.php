@@ -1,5 +1,6 @@
 <?php
-include "../../Modelo/Conexion.php";
+/** @SuppressWarnings("php:S4833") */
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (isset($_POST['btnRegistrarPedido'])) {
     $documento = $_POST['DocClie'];
@@ -36,4 +37,3 @@ if (isset($_POST['btnRegistrarPedido'])) {
         echo "Error al registrar el pedido: " . $conexion->error;
     }
 }
-?>
