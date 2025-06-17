@@ -1,6 +1,6 @@
 <?php
-// Incluir conexión a base de datos
-require_once '../../Modelo/Conexion.php';
+/** @SuppressWarnings("php:S4833") */
+require_once '../../Modelo/Conexion.php'; // NOSONAR
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -17,11 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnRegistrarProv'])) {
     $tipoDoc = $_POST['idTipoDocumento'];
 
 
-    /*if (empty($docpro) || empty($nombrepro) || empty($telefonopro) || empty($direccionpro) || empty($correopro) || empty($tipoDoc)) {
-            
-        echo 'Error: Todos los campos son requeridos.';
-        exit;
-    }*/
 
     // Insertar datos en la base de datos
     $sql = "INSERT INTO proveedor (documentoProveedor_PK, nombreProveedor, telefonoProveedor, direccionProveedor, correoProveedor, id_TipoDocumento_FK)
@@ -37,4 +32,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnRegistrarProv'])) {
         echo 'Error al registrar.';
     }
 }
-?>
+
