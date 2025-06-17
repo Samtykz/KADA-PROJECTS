@@ -19,11 +19,11 @@ class ControladorAdmin extends Controller
             return response()->json([
                 'message' => 'No hay administradores registrados',
                 'status' => 200
-            ], 200); 
+            ], 200);
         }
         return response()->json($admi, 200);
     }
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $validacion = Validator::make($request->all(), [
             'admi_Codigo_PK' => self::RULE_REQUIRED_MIN2_MAX12,
@@ -31,14 +31,14 @@ class ControladorAdmin extends Controller
             'admi_apellido' => 'required|min:2|max:40',
             'admi_telefono' => self::RULE_REQUIRED_MIN2_MAX12,
             'admi_direccion' => 'required|min:2|max:60',
-            'admi_correo' => 'required|email', 
+            'admi_correo' => 'required|email',
             'admi_contrasena' => 'required|string|min:6',
         ]);
         if ($validacion->fails()) {
             return response()->json([
                 'message' => 'Error en la validación del Administrador',
                 'errors' => $validacion->errors(),
-                'status' => 400 
+                'status' => 400
             ], 400);
         }
         $admi = loginAdmin::create([
@@ -52,7 +52,7 @@ class ControladorAdmin extends Controller
         ]);
         if (!$admi) {
             return response()->json([
-                'message' => 'Error al registrar Administrador', 
+                'message' => 'Error al registrar Administrador',
                 'status' => 500
             ], 500);
         }
@@ -67,7 +67,7 @@ class ControladorAdmin extends Controller
         if (!$admi) {
             return response()->json([
                 'message' => 'El administrador no existe',
-                'status' => 404 
+                'status' => 404
             ], 404);
         }
         return response()->json([
@@ -90,7 +90,7 @@ class ControladorAdmin extends Controller
             'admi_apellido' => 'required|min:2|max:40',
             'admi_telefono' => self::RULE_REQUIRED_MIN2_MAX12,
             'admi_direccion' => 'required|min:2|max:60',
-            'admi_correo' => 'required|email', 
+            'admi_correo' => 'required|email',
             'admi_contrasena' => 'required|string|min:6',
         ]);
         if ($validacion->fails()) {
