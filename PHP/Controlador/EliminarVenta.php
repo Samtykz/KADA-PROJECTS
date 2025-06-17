@@ -9,4 +9,3 @@ if (!empty($_GET["id"])) {
         echo '<div>Error al eliminar el producto</div>';
     }
 }
-?>
