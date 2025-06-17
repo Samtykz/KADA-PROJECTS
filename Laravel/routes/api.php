@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorCliente;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\pedidoControlador; 
+use App\Http\Controllers\PedidoControlador; 
 use App\Http\Controllers\loginAdminController; 
 use App\Http\Controllers\ControladorAdmin;
 use App\Http\Controllers\DetalleControlador;
@@ -36,10 +36,10 @@ Route::middleware(['cors'])->group(function () {
 
 //Pedido
 Route::get('/pedido', [pedidoControlador::class, 'index']);
-Route::get('/pedido/{id_Pedido_PK}', [pedidoControlador::class, 'show']);
-Route::post('/pedido', [pedidoControlador::class, 'store']);
-Route::put('/pedido/{id_Pedido_PK}', [pedidoControlador::class, 'update']);
-Route::delete('/pedido/{id_Pedido_PK}', [pedidoControlador::class, 'destroy']);
+Route::get('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'show']);
+Route::post('/pedido', [PedidoControlador::class, 'store']);
+Route::put('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'update']);
+Route::delete('/pedido/{id_Pedido_PK}', [PedidoControlador::class, 'destroy']);
 
 //admin
 Route::get('/administrador', [ControladorAdmin::class, 'index']);
