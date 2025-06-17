@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\prodModelo;
+use App\Models\ProdModelo;
 use Illuminate\Support\Facades\Validator;
 
 class ProdControlador extends Controller
 {
     public function index()
     {
-        $producto = prodModelo::all();
+        $producto = ProdModelo::all();
         if ($producto->isEmpty()) {
             return response()->json([
                 'message' => 'No hay productos registrados',
@@ -21,7 +21,7 @@ class ProdControlador extends Controller
     }
 
     public function show($prod_Codigo_PK){
-        $producto = prodModelo::find($prod_Codigo_PK);
+        $producto = ProdModelo::find($prod_Codigo_PK);
         if(!$producto){
             $data=[
             'message'=>'El producto no existe',
