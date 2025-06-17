@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\imgModelo;
+use App\Models\ImgModelo;
 use Illuminate\Http\Request;
 
 // Renombrar la clase para que siga el estándar de PascalCase
@@ -9,7 +9,7 @@ class ImgControlador extends Controller
 {
     public function index()
     {
-        $imagenes = imgModelo::all();
+        $imagenes = ImgModelo::all();
         
         if ($imagenes->isEmpty()) {
             return response()->json(['message' => 'No hay imágenes'], 200);
@@ -27,7 +27,7 @@ class ImgControlador extends Controller
     
     public function show($codigoImagenes)
     {
-        $imagenes = imgModelo::find($codigoImagenes);
+        $imagenes = ImgModelo::find($codigoImagenes);
         if(!$imagenes){
             $data = [
                 'message' => 'La imagen no existe',
