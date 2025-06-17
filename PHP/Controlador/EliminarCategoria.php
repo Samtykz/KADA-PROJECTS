@@ -1,6 +1,6 @@
 <?php
 /** @SuppressWarnings("php:S4833") */
-include "../../Modelo/Conexion.php"; // NOSONAR
+include_once "../../Modelo/Conexion.php"; // NOSONAR
 
 if (!empty($_GET["id"])) {
     $id = $_GET["id"];
