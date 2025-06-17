@@ -16,4 +16,3 @@ if(isset($_POST['btnLogin'])){
     }
     header("Location:../index.html");
 }
-?>
