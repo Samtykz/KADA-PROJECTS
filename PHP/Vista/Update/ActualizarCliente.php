@@ -163,7 +163,7 @@
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Formato de correo válido
     const regexDireccion = /^[A-Za-z0-9\s#\-.,]+$/; // Dirección alfanumérica
     // Función para validar el formulario
-    function validarFormulario(event) {     
+    function validarFormulario(event) {
       console.log("Validando formulario...");
       // Obtener los valores de los campos
       const nombreNuevo = document.getElementById("nomNuevo").value.trim();
