@@ -15,7 +15,6 @@
   <title>KADA</title>
 </head>
 <body style="position: relative; padding-bottom: 8rem; min-height: 100vh;">
-
   <br><br><br>
   <section class="vh-100">
     <div class="container h-100">
@@ -31,64 +30,58 @@
                     include_once "../../Modelo/Conexion.php";
                     include_once "../../Controlador/conRegistrarProducto.php"; // NOSONAR
                   ?>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="nomPro">Nombre</label>
                       <input type="text" id="nomPro" class="form-control" name="nombrepro"/>
-                      <label class="form-label">Nombre</label>
                       <br>
                       <span id="errorNombre" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="precioPro">Precio</label>
                       <input type="number" id="precioPro" class="form-control" name="preciopro"/>
-                      <label class="form-label" >Precio</label>
                       <br>
                       <span id="errorPrecio" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="medPro">Unidad-Medida (Talla)</label>
                       <input type="text" id="medPro" class="form-control" name="unidadmedida"/>
-                      <label class="form-label">Unidad-Medida (Talla)</label>
                       <br>
                       <span id="errorMedida" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="stkPro">Stock</label>
                       <input type="number" id="stkPro" class="form-control" name="stockpro"/>
-                      <label class="form-label" >Stock</label>
                       <br>
                       <span id="errorStk" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="maPro">Material</label>
                       <input type="text" id="maPro" class="form-control" name="materialpro"/>
-                      <label class="form-label">Material</label>
                       <br>
                       <span id="errorMaterial" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="descPro">Descripción</label>
                       <input type="text" id="descPro" class="form-control" name="descripcionpro"/>
-                      <label class="form-label" >Descripción</label>
                       <br>
                       <span id="errorDesc" class="text-danger"></span>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <select class="form-control"  name="categoriapro" required>
+                      <label class="form-label" for="categoriapro">Categoría</label>
+                      <select class="form-control" id="categoriapro" name="categoriapro" required>
                         <option value="" disabled selected>Categoría</option>
                         <option value="1">Oversize</option>
                         <option value="2">Crewneck</option>
@@ -99,8 +92,8 @@
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="docProveedor">Documento Proveedor</label>
                       <input type="number" id="docProveedor" class="form-control" name="proveedorpro"/>
-                      <label class="form-label" >Documento Proveedor</label>
                       <br>
                       <span id="errorDoc" class="text-danger"></span>
                     </div>
@@ -118,7 +111,6 @@
     </div>
   </section>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
   <!-- Start Footer Section -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script>
@@ -131,7 +123,6 @@
       const material = document.getElementById('maPro').value.trim();
       const descripcion = document.getElementById('descPro').value.trim();
       const documentoPro = document.getElementById('docProveedor').value.trim();
-
       // Validar nombre
       if (nombre === "") {
           document.getElementById('errorNombre').innerText = "El nombre del producto es obligatorio.";
