@@ -18,6 +18,7 @@ SET time_zone = "+00:00";
 SET @ESTADO_ACTIVO = 'activo';
 SET @ESTADO_INACTIVO = 'inactivo';
 SET @APELLIDO_BELLO = 'Bello';
+SET @DOCUMENTO_PROVEEDOR_86396482 = '86396482';
 
 --
 -- Base de datos: `kadabd`
@@ -286,7 +287,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `prod_UnidadMedida`, `prod_Stock`, `prod_Material`, `prod_Descripcion`, `id_Categoria_FK`, `documentoProveedor_FK`) VALUES
-(1, 'Manantial', 250000, 'M', 45, 'Algodón', 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, '86396482'),
+(1, 'Manantial', 250000, 'M', 45, 'Algodón', 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, 'DOCUMENTO_PROVEEDOR_86396482'),
 (2, 'Aqua', 340000, 'L', 56, 'Algodón', 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
 (3, 'Zipper', 200000, 'XL', 56, 'Mezcla de algodón y ', 'Buzo con medio cierre, mezcla de algodón y poliéster, versátil y moderno', 3, '456789123'),
 (4, 'Lenix', 80000, 'S', 56, 'Algodón orgánico', 'Hoodie color rojo de algodón perchado, con capucha y bolsillo frontal', 4, '321654987'),
@@ -303,7 +304,7 @@ INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `pr
 (31, 'UrbanFit', 180000, 'L', 21, 'Algodón', 'CrewNeck ideal para el día a día.', 2, '4962354'),
 (32, 'NeoHood', 280000, 'M', 2, 'Algodón', 'Half Zip perfecto para todo tipo de climas.', 3, '147258369'),
 (33, 'Arctic Flow', 178000, 'L', 4, 'Algodón', 'Artic Flow, maneja la tranquilidad.', 3, '456789123'),
-(44, 'StormWear', 270000, 'M', 11, 'Algodón', 'Buso Half Zip a la moda.', 3, '86396482'),
+(44, 'StormWear', 270000, 'M', 11, 'Algodón', 'Buso Half Zip a la moda.', 3, 'DOCUMENTO_PROVEEDOR_86396482'),
 (47, 'SkyWave', 110000, 'S', 32, 'Algodón', 'SkyWave, estiloso.', 4, '963852741'),
 (49, 'Certified Lover Hood', 190000, 'L', 12, 'Algodón', 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
 (50, 'Savage Mode', 230000, 'S', 23, 'Algodón', 'Hoodie de excelente calidad.', 4, '321654987');
@@ -359,7 +360,7 @@ INSERT INTO `proveedor` (`documentoProveedor_PK`, `nombreProveedor`, `telefonoPr
 ('654321789', 'Telas del Sur S.A', '6543217', 'Calle 567, Ciudad Sur', 'ventas@alimsur.com', 4),
 ('789123456', 'BuzoCraft', '7891234', 'Avenida 234, Ciudad Nueva', 'pedidos@buzocraft.com', 4),
 ('852741963', 'Nautical Threads', '8527419', 'Avenida Jimenez 852, Centro', 'soporte@nthreads.com', 4),
-('86396482', 'Soluciones LUM', '874876', 'Calle 45 # 76-98', 'solucioneslum@example.com', 4),
+('DOCUMENTO_PROVEEDOR_86396482', 'Soluciones LUM', '874876', 'Calle 45 # 76-98', 'solucioneslum@example.com', 4),
 ('963852741', 'Productos Químicos S.A.', '9638527', 'Avenida 963, Parque Industrial', 'contacto@prodquimicos.com', 1),
 ('987654321', 'Proveedora Central Ltda', '9876543', 'Avenida Central 456', 'ventas@provcentral.com', 4);
 
