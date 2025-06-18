@@ -18,7 +18,6 @@ SET time_zone = "+00:00";
 SET @ESTADO_ACTIVO = 'activo';
 SET @ESTADO_INACTIVO = 'inactivo';
 SET @APELLIDO_BELLO = 'Bello';
-SET @NUMERO_DOCUMENTO = '1019763323';
 
 --
 -- Base de datos: `kadabd`
@@ -81,7 +80,6 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `clie_Telefono`, `clie_Telefono2`, `clie_direccion`, `clie_correo`, `id_TipoDocumento_FK`, `contrasena`, `estado`) VALUES
 ('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', @ESTADO_ACTIVO),
 ('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', @ESTADO_ACTIVO),
-('@NUMERO_DOCUMENTO', 'David', 'Real', '5552006', '5552405', 'KRA 13C BIS ESTE', 'real@example.com', 1, '$2y$10$QzDQyZVGMSGtYss1p0ealefvq36nXA6oCQVZ6BR1Nc/', @ESTADO_ACTIVO),
 ('1069473899', 'Eusebio', '@APELLIDO_BELLO', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
 ('124562711', 'Samuel', 'Guevara', '3125676521', '23417122', 'Calle 54 #87 sur', 'Samuelito22@gmail.com', 1, '$2y$10$DB3pQ42src1TULXVCe/7..64wf4heix2nIMgXzioVOs5vfFMW5VKq', @ESTADO_ACTIVO),
 ('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', @ESTADO_ACTIVO),
@@ -253,12 +251,8 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_Pedido_PK`, `fechaPedido`, `horaPedido`, `clie_Documento_FK`) VALUES
-(85, '2025-04-15', '22:19:00', '@NUMERO_DOCUMENTO'),
 (86, '2025-04-15', '22:42:00', '126879211'),
 (87, '2025-04-15', '22:50:00', '3214567252'),
-(88, '2025-04-15', '22:51:00', '@NUMERO_DOCUMENTO'),
-(90, '2025-04-15', '23:28:00', '@NUMERO_DOCUMENTO'),
-(91, '2025-04-21', '20:53:00', '@NUMERO_DOCUMENTO');
 
 -- --------------------------------------------------------
 
