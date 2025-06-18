@@ -32,8 +32,9 @@
                 <h3 class="mb-5 text-uppercase" style="text-align: center;">REGISTRO TIPO DE DOCUMENTO</h3>
                 <form  method="POST" onsubmit="return validarFormulario()">
                      <?php
-                       include "../../Modelo/Conexion.php";
-                       include "../../Controlador/conRegistroTipoDocumento.php";
+                     /** @SuppressWarnings("php:S4833") */
+                       include_once "../../Modelo/Conexion.php";
+                       include_once "../../Controlador/conRegistroTipoDocumento.php"; // NOSONAR
                      ?>
 
                     <div class="-md-6 mb-4">
@@ -58,9 +59,9 @@
           </div>
         </div>
       </div>
-    </div>   
+    </div>
   </section>
-  <br><br>  
+  <br><br>
 
   <!-- Start Footer Section -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -77,7 +78,7 @@
       if (nombre === "") {
           document.getElementById('errorNombre').innerText = "El nombre del tipo de documento es obligatorio.";
           return false;
-        } 
+        }
 
         // Si todas las validaciones pasan, se envia el formulario
         return true;
