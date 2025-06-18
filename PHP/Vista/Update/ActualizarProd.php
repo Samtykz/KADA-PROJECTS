@@ -32,90 +32,90 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="text" class="form-control" name="nombrepro" value="<?php echo $producto["prod_Nombre"]; ?>" readonly>
-                        <label class="form-text">Nombre</label>
+                        <input type="text" id="nombrepro" class="form-control" name="nombrepro" value="<?php echo $producto["prod_Nombre"]; ?>" readonly>
+                        <label for="nombrepro" class="form-text">Nombre</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="text" id="nomNuevo" class="form-control" name="nombreNuevo">
-                        <label class="form-text">Nombre nuevo del producto</label>
+                        <label for="nomNuevo" class="form-text">Nombre nuevo del producto</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="number" class="form-control" name="preciopro" value="<?php echo $producto["prod_PrecioVenta"]; ?>" readonly>
-                        <label class="form-text">Precio</label>
+                        <input type="number" id="preciopro" class="form-control" name="preciopro" value="<?php echo $producto["prod_PrecioVenta"]; ?>" readonly>
+                        <label for="preciopro" class="form-text">Precio</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="number" id="preNuevo" class="form-control" name="precioNuevo">
-                        <label class="form-text">Ingrese Precio nuevo</label>
+                        <label for="preNuevo" class="form-text">Ingrese Precio nuevo</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="text" class="form-control" name="unidadmedida" value="<?php echo $producto["prod_UnidadMedida"]; ?>" readonly>
-                        <label class="form-text">Unidad-Medida (Talla)</label>
+                        <input type="text" id="unidadmedida" class="form-control" name="unidadmedida" value="<?php echo $producto["prod_UnidadMedida"]; ?>" readonly>
+                        <label for="unidadmedida" class="form-text">Unidad-Medida (Talla)</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="text" id="medNuevo" class="form-control" name="tallaNueva">
-                        <label class="form-text">Unidad-Medida (Talla) nueva</label>
+                        <label for="medNuevo" class="form-text">Unidad-Medida (Talla) nueva</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="number" class="form-control" name="stockpro" value="<?php echo $producto["prod_Stock"]; ?>" readonly>
-                        <label class="form-text">Stock</label>
+                        <input type="number" id="stockpro" class="form-control" name="stockpro" value="<?php echo $producto["prod_Stock"]; ?>" readonly>
+                        <label for="stockpro" class="form-text">Stock</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="number" id="stkNuevo" class="form-control" name="stockNuevo">
-                        <label class="form-text">Ingrese el Stock nuevo</label>
+                        <label for="stkNuevo" class="form-text">Ingrese el Stock nuevo</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="text" class="form-control" name="materialpro" value="<?php echo $producto["prod_Material"]; ?>" readonly>
-                        <label class="form-text">Material</label>
+                        <input type="text" id="materialpro" class="form-control" name="materialpro" value="<?php echo $producto["prod_Material"]; ?>" readonly>
+                        <label for="materialpro" class="form-text">Material</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="text" id="matNueva" class="form-control" name="materialNuevo">
-                        <label class="form-text">Material nuevo</label>
+                        <label for="matNueva" class="form-text">Material nuevo</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="text" class="form-control" name="descripcionpro" value="<?php echo $producto["prod_Descripcion"]; ?>" readonly>
-                        <label class="form-text">Descripción</label>
+                        <input type="text" id="descripcionpro" class="form-control" name="descripcionpro" value="<?php echo $producto["prod_Descripcion"]; ?>" readonly>
+                        <label for="descripcionpro" class="form-text">Descripción</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="text" id="desNueva" class="form-control" name="descripcionNueva">
-                        <label class="form-text">Descripción nueva</label>
+                        <label for="desNueva" class="form-text">Descripción nueva</label>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <select class="form-control" name="categoriaPro" value="<?php echo $producto["id_Categoria_FK "]; ?>">
+                      <select class="form-control" id="categoriaPro" name="categoriaPro" value="<?php echo $producto["id_Categoria_FK "]; ?>">
                         <option value="" disabled selected>Categoría</option>
                         <option value="1">Oversize</option>
                         <option value="2">Crewneck</option>
@@ -127,14 +127,14 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                        <input type="number" class="form-control" name="proveedorpro" value="<?php echo $producto["documentoProveedor_FK"]; ?>" readonly>
-                        <label class="form-text">Documento Proveedor</label>
+                        <input type="number" id="proveedorpro" class="form-control" name="proveedorpro" value="<?php echo $producto["documentoProveedor_FK"]; ?>" readonly>
+                        <label for="proveedorpro" class="form-text">Documento Proveedor</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline flex-fill mb-0">
                         <input type="number" id="proNuevo" class="form-control" name="proveedorNuevo">
-                        <label class="form-text">Documento Proveedor</label>
+                        <label for="proNuevo" class="form-text">Documento Proveedor</label>
                       </div>
                     </div>
                   </div>
@@ -163,7 +163,7 @@
     const regexSoloTexto = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]+$/; // Solo texto y espacios
     const regexNumeroPositivo = /^\d+$/; // Para números positivos
     const regexDecimal = /^\d+([.,]\d{1,2})?$/; // Para decimales con punto o coma
-    const regexDocumento = /^\d{9}$/; // Para números de 9 dígitos
+    const regexDocumento = /^\d{9}$/; // Para números de 9 dígitos (ajusta a 10 si es necesario)
     // Función para validar el formulario
     function validarFormulario(event) {
       if (event) {
@@ -210,7 +210,7 @@
       if (descripcionNueva && !regexSoloTexto.test(descripcionNueva)) {
         errores.push("La descripción solo puede contener letras y espacios.");
       }
-      // Validar proveedor (asumiendo que es un teléfono/documento)
+      // Validar proveedor (ajusta a 10 dígitos si corresponde)
       if (proveedorNuevo && !regexDocumento.test(proveedorNuevo)) {
         errores.push("El proveedor debe tener exactamente 9 dígitos.");
       }
@@ -223,10 +223,8 @@
         mensajeError.style.textAlign = "left";
         event.preventDefault();
       } else {
-        // Ocultar el mensaje de error si está visible
         mensajeError.textContent = "";
       }
-      // Si todo está bien, permite el envío
       return true;
     }
     // Agregar el evento de envío del formulario
@@ -241,4 +239,5 @@
   </script>
 </body>
 </html>
+
 
