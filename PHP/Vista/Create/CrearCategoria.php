@@ -49,9 +49,9 @@
                 </div>
               </div>
             </div>
-          </div>   
+          </div>
         </section>
-    <br><br>    
+    <br><br>
     <!-- Start Footer Section -->
   <script src="js/bootstrap.bundle.min.js"></script>
   
