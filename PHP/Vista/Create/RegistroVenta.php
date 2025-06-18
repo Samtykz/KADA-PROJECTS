@@ -32,28 +32,28 @@
                   ?>
                   <input type="hidden" name="id" value="<?php echo $pedido['id_Pedido_FK']; ?>">
                   <div class="form-outline">
+                    <label class="form-label" for="fecha">Fecha Actual</label>
                     <input type="date" id="fecha" name="fecha_venta" class="form-control form-control-lg"/>
-                    <label class="form-label">Fecha Actual</label>
                     <br>
                     <span id="errorFec" class="text-danger"></span>
                   </div>
                   <div class="form-outline mb-4">
+                    <label class="form-label" for="total">Total a Pagar</label>
                     <input type="text" id="total" name="total_venta" class="form-control form-control-lg" />
-                    <label class="form-label">Total a Pagar</label>
                     <br>
                     <span id="errorTotal" class="text-danger"></span>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
+                        <label class="form-label" for="id_Pedido">ID del Pedido</label>
                         <input type="text" name="id_Pedido" class="form-control form-control-lg" value="<?php echo $pedido["id_Pedido_FK"]; ?>"/>
-                        <label class="form-label">ID del Pedido</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
+                        <label class="form-label" for="codAdmi">Digite su Código de Administrador</label>
                         <input type="text" id="codAdmi" name="admi_codigo" class="form-control form-control-lg" />
-                        <label class="form-label">Digite su Código de Administrador</label>
                         <br>
                         <span id="errorCod" class="text-danger"></span>
                       </div>
@@ -61,8 +61,8 @@
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
+                      <label class="form-label" for="hora">Hora Actual</label>
                       <input type="time" id="hora" name="hora_venta" class="form-control form-control-lg" />
-                      <label class="form-label">Hora Actual</label>
                       <br>
                       <span id="errorHora" class="text-danger"></span>
                     </div>
@@ -80,8 +80,7 @@
       </div>
     </div>
   </section>
-  <br><br><br><br><br><br><br><br><br> 
-
+  <br><br><br><br><br><br><br><br><br>
   <!-- Start Footer Section -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script>
@@ -142,7 +141,7 @@
         });
       }
     }
-    // Limpiar errores al momento de escribir 
+    // Limpiar errores al momento de escribir
     limpiarError('fecha', 'errorFec');
     limpiarError('iva', 'errorIva');
     limpiarError('total','errorTotal');
@@ -151,3 +150,4 @@
   </script>
 </body>
 </html>
+
