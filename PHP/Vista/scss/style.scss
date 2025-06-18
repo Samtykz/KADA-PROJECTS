@@ -815,6 +815,10 @@ textarea {
 	}
 	.btn {
 		padding: 2px 10px;
+		background: none!important;
+		color: $black;
+		border: none;
+		height: auto!important;
 	}
 	thead {
 		th {
@@ -842,12 +846,6 @@ textarea {
 		}
 	}
 
-	.btn {
-		background: none!important;
-		color: $black;
-		border: none;
-		height: auto!important;
-	}
 }
 
 .site-block-order-table {
@@ -865,7 +863,7 @@ textarea {
 	input {
 		border-radius: 10px!important;
 	}
-	
+
 }
 .text-primary {
 	color: $primary!important;
