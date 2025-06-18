@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="es">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
@@ -22,91 +22,85 @@
           <div class="card card-registration my-4" style="display: flex; justify-content: center; align-items: center; border-radius: 15px;">
             <div class="col-xl-10">
               <div class="card-body p-md-8 text-black">
-                <h3 class="mb-5 text-uppercase" style="text-align: center;">ACTUALIZA TUS DATOS</h3>
-                <form id="formActualizarAdmin" method="POST">
+                <h3 class="mb-5 text-uppercase" style="text-align: center;">ACTUALIZAR DATOS PROVEEDOR</h3>
+                <form method="POST" id="formActualizarProveedor">
                   <?php
                   /** @SuppressWarnings("php:S4833") */
-                  include_once "../../Controlador/ActualizarAdmin.php"; // NOSONAR
+                  include_once "../../Controlador/ActualizarProveedor.php"; // NOSONAR
                   ?>
-                  <input type="hidden" name="id" value="<?php echo $Admin['admi_Codigo_PK']; ?>">
+                  <input type="hidden" name="id" value="<?php echo $proveedor['documentoProveedor_PK']; ?>">
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="nombreActual" class="form-control form-control-lg" name="nombreActual" value="<?php echo $Admin["admi_nombre"]; ?>" readonly />
-                        <label class="form-label" for="nombreActual">Nombre</label>
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" name="nombreActual" value="<?php echo $proveedor["nombreProveedor"]; ?>" readonly />
+                        <label class="form-label" for="form3Example1m">Nombre</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="nombreNuevo" class="form-control form-control-lg" name="nombreNuevo" />
-                        <label class="form-label" for="nombreNuevo"><div id="emailHelp" class="form-text">Ingresa tu nombre nuevo.</div></label>
+                        <input type="text" id="nomNuevo" class="form-control form-control-lg" name="nombreNuevo" />
+                        <label class="form-label" for="nomNuevo"><div id="emailHelp" class="form-text">Ingresa tu nombre nuevo.</div></label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="apellidoActual" class="form-control form-control-lg" name="apellidoActual" value="<?php echo $Admin["admi_apellido"]; ?>" readonly />
-                        <label class="form-label" for="apellidoActual">Apellido</label>
+                        <input type="number" id="form3Example1m" class="form-control form-control-lg" name="telefonoActual" value="<?php echo $proveedor["telefonoProveedor"]; ?>" readonly />
+                        <label class="form-label" for="form3Example1m">Teléfono</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="apellidoNuevo" class="form-control form-control-lg" name="apellidoNuevo" />
-                        <label class="form-label" for="apellidoNuevo"><div id="emailHelp" class="form-text">Ingresa tu Apellido.</div></label>
+                        <input type="number" id="numNuevo" class="form-control form-control-lg" name="telefonoNuevo" />
+                        <label class="form-label" for="numNuevo"><div id="emailHelp" class="form-text">Ingresa tu número de teléfono nuevo.</div></label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="telefonoActual" class="form-control form-control-lg" name="telefonoActual" value="<?php echo $Admin["admi_telefono"]; ?>" readonly />
-                        <label class="form-label" for="telefonoActual">Teléfono</label>
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" name="direccionActual" value="<?php echo $proveedor["direccionProveedor"]; ?>" readonly />
+                        <label class="form-label" for="form3Example1m">Dirección</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="telefonoNuevo" class="form-control form-control-lg" name="telefonoNuevo" />
-                        <label class="form-label" for="telefonoNuevo"><div id="emailHelp" class="form-text">Ingresa tu número de teléfono nuevo.</div></label>
+                        <input type="text" id="dirNueva" class="form-control form-control-lg" name="direccionNueva" />
+                        <label class="form-label" for="dirNueva"><div id="emailHelp" class="form-text">Ingresa tu Dirección nueva.</div></label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="direccionActual" class="form-control form-control-lg" name="direccionActual" value="<?php echo $Admin["admi_direccion"]; ?>" readonly />
-                        <label class="form-label" for="direccionActual">Dirección</label>
+                        <input type="gmail" id="form3Example1m" class="form-control form-control-lg" name="correoActual" value="<?php echo $proveedor["correoProveedor"]; ?>" readonly />
+                        <label class="form-label" for="form3Example1m">Correo Electrónico</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="direccionNueva" class="form-control form-control-lg" name="direccionNueva" />
-                        <label class="form-label" for="direccionNueva"><div id="emailHelp" class="form-text">Ingresa Nueva Dirección.</div></label>
+                        <input type="gmail" id="corNuevo" class="form-control form-control-lg" name="correoNuevo" />
+                        <label class="form-label" for="corNuevo"><div id="emailHelp" class="form-text">Ingresa tu Correo nuevo.</div></label>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="correoActual" class="form-control form-control-lg" name="correoActual" value="<?php echo $Admin["admi_correo"]; ?>" readonly />
-                        <label class="form-label" for="correoActual">Correo Electrónico</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="correoNuevo" class="form-control form-control-lg" name="correoNuevo" />
-                        <label class="form-label" for="correoNuevo"><div id="emailHelp" class="form-text">Ingresa tu Correo nuevo.</div></label>
-                      </div>
-                    </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="tipoDocumentoNuevo">Tipo de Documento Nuevo</label>
+                    <select name="tipoDocumentoNuevo" id="tipoDocumentoNuevo" class="form-control">
+                      <option value="1">Cédula de Ciudadanía</option>
+                      <option value="3">Cédula Extranjera</option>
+                      <option value="4">NIT</option>
+                    </select>
                   </div>
                   <!-- Mensaje de error -->
                   <div id="mensajeError" class="error-message"></div>
                   <div class="d-flex justify-content-end pt-3">
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">
-                      <a href="../Read/viAdministradores.php" style="text-decoration: none; color:#f5eef8">Cancelar</a>
-                    </button>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"><a href="../Read/viProveedor.php" style="text-decoration: none; color:#f5eef8">Cancelar</a></button>
                     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg ms-2" name="actualizar">Actualizar</button>
                   </div>
+                  <?php
+                  ?>
                 </form>
               </div>
             </div>
@@ -118,24 +112,20 @@
   <br><br>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script>
-    // Obtener el elemento del mensaje de error
     const mensajeError = document.getElementById("mensajeError");
     // Expresiones regulares para validaciones
     const regexSoloTexto = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]+$/; // Solo texto y espacios
-    const regexTelefono = /^\d{10}$/; // Exactamente 10 dígitos
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Formato de correo válido
+    const regexTelefono = /^\d{10}$/; // Para números de 10 dígitos
     const regexDireccion = /^[A-Za-z0-9\s#\-.,]+$/; // Dirección alfanumérica
-
-    function validarFormulario(event) {
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Formato de correo válido
+    function validarFormulario(event){
       // Obtener los valores de los campos
-      const nombreNuevo = document.getElementById("nombreNuevo").value.trim();
-      const apellidoNuevo = document.getElementById("apellidoNuevo").value.trim();
-      const telefonoNuevo = document.getElementById("telefonoNuevo").value.trim();
-      const direccionNueva = document.getElementById("direccionNueva").value.trim();
-      const correoNuevo = document.getElementById("correoNuevo").value.trim();
-
+      const nombreNuevo = document.getElementById("nomNuevo").value.trim();
+      const telefonoNuevo = document.getElementById("numNuevo").value.trim();
+      const direccionNueva = document.getElementById("dirNueva").value.trim();
+      const correoNuevo = document.getElementById("corNuevo").value.trim();
       // Verificar si todos los campos están vacíos
-      if (!nombreNuevo && !apellidoNuevo && !telefonoNuevo && !direccionNueva && !correoNuevo) {
+      if (!nombreNuevo && !telefonoNuevo && !direccionNueva && !correoNuevo) {
         mensajeError.textContent = "Todos los campos están vacíos. Debes ingresar al menos un valor para actualizar.";
         mensajeError.style.color = "red";
         mensajeError.style.fontWeight = "bold";
@@ -144,23 +134,25 @@
         event.preventDefault();
         return;
       }
-      // Validar cada campo solo si tiene un valor
+      // Validar cada campo
       let errores = [];
+      // Validar nombre
       if (nombreNuevo && !regexSoloTexto.test(nombreNuevo)) {
         errores.push("El nombre solo puede contener letras y espacios.");
       }
-      if (apellidoNuevo && !regexSoloTexto.test(apellidoNuevo)) {
-        errores.push("El apellido solo puede contener letras y espacios.");
-      }
+      // Validar teléfono
       if (telefonoNuevo && !regexTelefono.test(telefonoNuevo)) {
         errores.push("El teléfono debe tener exactamente 10 dígitos.");
       }
+      // Validar dirección
       if (direccionNueva && !regexDireccion.test(direccionNueva)) {
         errores.push("La dirección contiene caracteres no válidos.");
       }
+      // Validar correo
       if (correoNuevo && !regexCorreo.test(correoNuevo)) {
         errores.push("El correo electrónico no tiene un formato válido.");
       }
+      // Mostrar errores o enviar el formulario
       if (errores.length > 0) {
         mensajeError.innerHTML = errores.join("<br>");
         mensajeError.style.color = "red";
@@ -172,8 +164,8 @@
         mensajeError.textContent = "";
       }
     }
-    document.getElementById("formActualizarAdmin").addEventListener("submit", validarFormulario);
-    const campos = document.querySelectorAll("#formActualizarAdmin input[type='text'], #formActualizarAdmin input[type='password']");
+    document.getElementById("formActualizarProveedor").addEventListener("submit", validarFormulario);
+    const campos = document.querySelectorAll("#formActualizarProveedor input[type='text'], #formActualizarProveedor input[type='password'], #formActualizarProveedor input[type='number']");
     campos.forEach(campo => {
       campo.addEventListener("input", () => {
         mensajeError.textContent = "";
@@ -182,3 +174,4 @@
   </script>
 </body>
 </html>
+
