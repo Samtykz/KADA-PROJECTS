@@ -78,7 +78,7 @@
                         <label class="form-label" for="direccionActual">Dirección</label>
                       </div>
                     </div>
-                    <div class="col-md-6 mb-4"> 
+                    <div class="col-md-6 mb-4">
                       <div data-mdb-input-init class="form-outline">
                         <input type="text" id="direccionNueva" class="form-control form-control-lg" name="direccionNueva" />
                         <label class="form-label" for="direccionNueva"><div id="emailHelp" class="form-text">Ingresa Nueva Dirección.</div></label>
