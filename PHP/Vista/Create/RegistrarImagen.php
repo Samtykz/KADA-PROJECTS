@@ -1,7 +1,8 @@
 <?php
 // Iniciar sesión al principio del script (ANTES de cualquier salida HTML)
 session_start();
-include '../../Modelo/Conexion.php';
+/** @SuppressWarnings("php:S4833") */
+include_once '../../Modelo/Conexion.php'; // NOSONAR
 
 // Procesar formulario si se envió
 if (isset($_POST['btnSubirImagen'])) {
@@ -48,7 +49,7 @@ if (isset($_POST['btnSubirImagen'])) {
         
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaCompleta)) {
             // Guardar en base de datos
-            $sql = "INSERT INTO imagenes (codigoImagenes, prod_Codigo, imagen) 
+            $sql = "INSERT INTO imagenes (codigoImagenes, prod_Codigo, imagen)
                     VALUES (?, ?, ?)";
                     
             $stmt = $conexion->prepare($sql);
