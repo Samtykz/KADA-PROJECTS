@@ -31,8 +31,8 @@
                 <form method="POST" onsubmit="return validarFormulario()">
                   <?php
                   /** @SuppressWarnings("php:S4833") */
-                  include "../../Modelo/Conexion.php";
-                  include "../../Controlador/conRegistroCliente.php"; // NOSONAR
+                  include_once "../../Modelo/Conexion.php";
+                  include_once "../../Controlador/conRegistroCliente.php"; // NOSONAR
                   ?>
                   <div class="row">
                     <div class="col-md-6 mb-4">
