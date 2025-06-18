@@ -25,7 +25,7 @@
                 <h3 class="mb-5 text-uppercase" style="text-align: center;">ACTUALIZAR TIPO DE DOCUMENTO</h3>
                 <form method="POST" id="formActualizarTipoDocumento">
                   <?php
-				  /** @SuppressWarnings("php:S4833") */
+                  /** @SuppressWarnings("php:S4833") */
                   include_once "../../Controlador/ActualizarTipDoc.php"; // NOSONAR
                   ?>
                   <input type="hidden" name="id" value="<?php echo $tipodocumento['id_TipoDocumento_PK']; ?>">
@@ -122,3 +122,4 @@
   </script>
 </body>
 </html>
+
