@@ -85,8 +85,6 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', @ESTADO_ACTIVO),
 ('1456456455', 'eusebio', 'topollillo', '4658433', '5552490', 'KRA 82C #45-07 SUR', 'sabrooso@example.com', 1, '123456', @ESTADO_ACTIVO),
 ('14569876', 'mssi', 'kaka', '58423', '78963', 'KRA 13C bsite', 'romero@example.com', 1, 'abeja', @ESTADO_ACTIVO),
-('212123111', 'Carlos', 'Garcia', '2312312311', '122312', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$LVpw2KD3m2T2q26llwGbL.ZJ21j131PcPztMY1LotqvbXW7.VQEda', @ESTADO_ACTIVO),
-('3214567252', 'Carlos', 'Garcia', '2312312311', '12312112', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$2Lr0KARX14G75gJKEJjOw.nE0l3uV5hwDMOxjvHu7i7wXghOjQJKW', @ESTADO_ACTIVO),
 ('3242343423', 'louis samuel santiago', 'diaz rodriguez bello', '313213133', '4124342324', 'localhost', 'salchichon@gmail.com', 1, '789456', @ESTADO_ACTIVO),
 ('456789', 'Maria', 'Gomez', '23455839', '43562783', 'CALLE 84 SUR #92-85', 'mariahsga@gmail.com', 1, 'gfdgfghj', @ESTADO_ACTIVO),
 ('48564564564', 'Juan David', 'Romero Castaño', '645546564', '45465456', 'call3 K8', 'juaandavid@gmail.com', 1, '3053652257', @ESTADO_ACTIVO),
