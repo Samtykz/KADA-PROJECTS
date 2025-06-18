@@ -1,4 +1,3 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "kadabd");
+$conexion = new mysqli("localhost", "root", "kadita", "kadabd");
 $conexion->set_charset("utf8");
-?>
