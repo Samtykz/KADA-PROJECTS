@@ -95,8 +95,6 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('785412369', 'Juan David', 'Romero Castaño', '3658945522', '3023697845', 'CALE 13', 'cataneda@gmail.com', 1, '789456', @ESTADO_ACTIVO),
 ('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', @ESTADO_ACTIVO),
 ('7894561230', 'oscar', LOWER'@APELLIDO_BELLO', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
-('876157191', 'Carlos', 'Garnica', '3245625431', '12121212', 'Carrera 9', 'Sd989@gmail.com', 1, '$2y$10$./ck5U1O2SRwXFYwo1ZYO.DMYjfil7Jobo10Rm9bLZ8jB2WRpGPwC', @ESTADO_ACTIVO);
-
 -- --------------------------------------------------------
 
 --
@@ -117,14 +115,8 @@ CREATE TABLE `detallepedido` (
 --
 
 INSERT INTO `detallepedido` (`cantidadProductoPedido`, `precioUnidadProducto`, `subtotalPedidoProducto`, `id_Pedido_FK`, `prod_Codigo_FK`, `metodoPago`) VALUES
-(1, 180000, 180000, 85, 31, 'Nequi'),
-(1, 180000, 180000, 86, 31, 'Nequi'),
-(1, 250000, 250000, 86, 1, 'Nequi'),
 (1, 290000, 290000, 87, 9, 'Bancolombia'),
 (1, 250000, 250000, 90, 1, 'Nequi'),
-(1, 290000, 290000, 91, 9, 'Nequi'),
-(1, 123000, 123000, 91, 12, 'Nequi');
-
 -- --------------------------------------------------------
 
 --
