@@ -48,14 +48,12 @@
           <div class="mb-3">
             <label for="idPro" class="form-labblacel">ID del Producto Pedido</label>
             <input type="number" id="idPro" class="form-control" name="Prod_id">
-            <!-- <div class="form-text">Ingresa el ID del Producto Pedido.</div> -->
             <br>
             <span id="errorId" class="text-danger"></span>
           </div>
           <div class="mb-3">
             <label for="can" class="form-labblacel">Cantidad Producto Pedido</label>
             <input type="number" id="can" class="form-control" name="cantidad">
-            <!--<div class="form-text">Ingresa la Cantidad Pedida del Producto.</div>-->
             <br>
             <span id="errorCan" class="text-danger"></span>
           </div>
@@ -87,11 +85,11 @@
           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"><a href="../Read/viDetallePedido.php" style="text-decoration: none; color:#f5eef8">Cancelar</a></button>
           <input type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" value="Registrar" name="btnRegistrarDetallePedido" style="background-color: #9b59b6; border: none;">
         </form>
-      </div>    
+      </div>
     </div>
   </div>
 </div>
-<br><br><br><br><br><br><br><br><br> 
+<br><br><br><br><br><br><br><br><br>
     
 <!-- Start Footer Section -->
 <script src="js/bootstrap.bundle.min.js"></script>
