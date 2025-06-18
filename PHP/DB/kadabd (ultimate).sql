@@ -56,8 +56,8 @@ INSERT INTO `administrador` (`admi_Codigo_PK`, `admi_nombre`, `admi_apellido`, `
 (11, 'Carlos ', 'Chavez', '3103569456', 'Calle falsa 594', 'carlos@ejemplo.com', '$2y$10$NtAU.3OOV9mG/NShGwb17.UbkD.cIzZLVbRVxwPpp9H', @ESTADO_ACTIVO),
 (12, 'Santiago', 'Real', '3224828409', 'KRA 13 C BIS', 'realsantiago2404@gmail.com', 'e64b78fc3bc91bcbc7dc232ba8ec59e0', @ESTADO_ACTIVO),
 (14, 'David', 'Rodríguez', '3026724246', 'KRA 13C BIS ESTE', 'realsantiago2405@gmail.com', '25426deebf91380dd4e33d79eef0741a', @ESTADO_ACTIVO),
-(16, 'Martin', ' @APELLIDO_BELLO', '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', @ESTADO_ACTIVO),
-(19, 'Eusebio', ' @APELLIDO_BELLO', '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
+(16, 'Martin', @APELLIDO_BELLO, '3219170009', 'CALLE 22 SUR #91-85', 'manuelito@gmail.com', '$2y$10$tJ8eWUgZdnxv5pDs93eWgeH.YDeByf1RT0YhXq4Tdrr', @ESTADO_ACTIVO),
+(19, 'Eusebio', @APELLIDO_BELLO, '3216548765', 'calle 23 #12-21', 'eusebio@gmail.com', '$2y$10$sWsIFSBTRzgACXvxo/nUte9/spTpOewtTSZvlWJsZEjaroBnRHJ2O', @ESTADO_ACTIVO),
 (20, 'Roman', 'palmeraatricio', '3698741', 'Avenida palmera # 34B Norte', 'solitoTC@example.com', '$2y$12$mPLKKmUn2Xn47q419K/njOF8MI8ze1A0BMruQikyFSe2E0iqStdCC', @ESTADO_ACTIVO),
 (23, 'SANTIAGO', 'DIAZ GUEVARA', '3219170873', 'CALLE 85 SUR #92-85', 'sd170419@gmail.com', '$2y$10$FzNDuviXhjtVo7gizS2wfufTIMY3mMuiCon9ZprOye.c.G4LHxqPu', @ESTADO_ACTIVO);
 -- --------------------------------------------------------
@@ -82,7 +82,7 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `clie_Telefono`, `clie_Telefono2`, `clie_direccion`, `clie_correo`, `id_TipoDocumento_FK`, `contrasena`, `estado`) VALUES
 ('0908765432', 'Cristian ', 'Perez', '3234641219', '', 'CRA 82c #45-08', 'cristian2@ejemplo.com', 1, '$2y$10$d.0fpihVjsq29oIN5TUwaemrPnNJdGaAscSMbogYoPYODUToUYQs.', @ESTADO_ACTIVO),
 ('1007364233', 'Camilo', 'Perez', '3234641219', '', 'CRA 82c #45-09', 'camilo@ejemplo.com', 1, '$2y$10$jqyGjo5alNd77O2YOijMAe/anBvI7xxWNTqgEWp6Wzyo9i.6kX1ya', @ESTADO_ACTIVO),
-('1069473899', 'Eusebio', '@APELLIDO_BELLO', '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
+('1069473899', 'Eusebio', @APELLIDO_BELLO, '3219170009', '21321231', 'CALLE 22 SUR ', 'eusebio12@gmail.com', 1, '$2y$10$P17ynyzycm2n5puoDqrmoej8/vxyVFGYFWmfWxLlDVI', @ESTADO_ACTIVO),
 ('124562711', 'Samuel', 'Guevara', '3125676521', '23417122', 'Calle 54 #87 sur', 'Samuelito22@gmail.com', 1, '$2y$10$DB3pQ42src1TULXVCe/7..64wf4heix2nIMgXzioVOs5vfFMW5VKq', @ESTADO_ACTIVO),
 ('126879211', 'Manuel', 'Ovalle', '3215462765', '43216271', 'Calle 54 #87 sur', 'manuelito@gmail.com', 1, '$2y$10$UnBm9xfunct9BYTjkE4Cdu7GbShI5oB3hnN44qTMCcxcy7JtDdxYi', @ESTADO_ACTIVO),
 ('1456456455', 'eusebio', 'topollillo', '4658433', '5552490', 'KRA 82C #45-07 SUR', 'sabrooso@example.com', 1, '123456', @ESTADO_ACTIVO),
@@ -96,7 +96,7 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('67890123', 'Monica', 'Acuña', '45776', '4567893', 'Calle 24', 'monica@ejemplo.com', 1, 'MonicaAc', @ESTADO_ACTIVO),
 ('785412369', 'Juan David', 'Romero Castaño', '3658945522', '3023697845', 'CALE 13', 'cataneda@gmail.com', 1, '789456', @ESTADO_ACTIVO),
 ('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 1, '', @ESTADO_ACTIVO),
-('7894561230', 'oscar', LOWER'@APELLIDO_BELLO', '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
+('7894561230', 'oscar', LOWER@APELLIDO_BELLO, '6544865522', '3669566699', 'lomas del manbuco', 'guerrerodragon@gmail.com', 1, '$2y$10$M7HZmL.fNs5AmsbxpKiDvOGCAOeakgFtW/Kyd/CEaQ8PHciKUVtMy', @ESTADO_ACTIVO),
 -- --------------------------------------------------------
 
 --
@@ -288,27 +288,27 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `prod_UnidadMedida`, `prod_Stock`, `prod_Material`, `prod_Descripcion`, `id_Categoria_FK`, `documentoProveedor_FK`) VALUES
-(1, 'Manantial', 250000, 'M', 45, '@MATERIAL_ALGODÓN', 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, '@DOCUMENTO_PROVEEDOR_86396482'),
-(2, 'Aqua', 340000, 'L', 56, '@MATERIAL_ALGODÓN', 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
+(1, 'Manantial', 250000, 'M', 45, @MATERIAL_ALGODÓN, 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, @DOCUMENTO_PROVEEDOR_86396482),
+(2, 'Aqua', 340000, 'L', 56, @MATERIAL_ALGODÓN, 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
 (3, 'Zipper', 200000, 'XL', 56, 'Mezcla de algodón y ', 'Buzo con medio cierre, mezcla de algodón y poliéster, versátil y moderno', 3, '456789123'),
 (4, 'Lenix', 80000, 'S', 56, 'Algodón orgánico', 'Hoodie color rojo de algodón perchado, con capucha y bolsillo frontal', 4, '321654987'),
-(6, 'Austin', 210000, 'L', 23, '@MATERIAL_ALGODÓN', 'Crewneck hecho en algodón, elegante y confortable', 2, '654321789'),
-(8, 'RutsEze', 300000, 'L', 32, '@MATERIAL_ALGODÓN', 'Hoddie de algodón, casual y funcional para todo tipo de actividades', 4, '963852741'),
-(9, 'MF DOOM Merch Hoddie', 290000, 'S', 55, '@MATERIAL_ALGODÓN', 'Buzo oversize de algodón color verde oscuro, ideal para un estilo casual y relajado', 1, '258369147'),
-(10, 'gaete', 140000, 'M', 65, '@MATERIAL_ALGODÓN', 'Buzo de cuello redondo de algodón ajustado y flexible', 2, '852741963'),
+(6, 'Austin', 210000, 'L', 23, @MATERIAL_ALGODÓN, 'Crewneck hecho en algodón, elegante y confortable', 2, '654321789'),
+(8, 'RutsEze', 300000, 'L', 32, @MATERIAL_ALGODÓN, 'Hoddie de algodón, casual y funcional para todo tipo de actividades', 4, '963852741'),
+(9, 'MF DOOM Merch Hoddie', 290000, 'S', 55, @MATERIAL_ALGODÓN, 'Buzo oversize de algodón color verde oscuro, ideal para un estilo casual y relajado', 1, '258369147'),
+(10, 'gaete', 140000, 'M', 65, @MATERIAL_ALGODÓN, 'Buzo de cuello redondo de algodón ajustado y flexible', 2, '852741963'),
 (11, 'Algarete', 218000, 'M', 60, 'Algodon', 'Buzo oversize color negro echo de algodón', 1, '321654987'),
-(12, 'Bad rust', 123000, 'M', 60, '@MATERIAL_ALGODÓN', 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, '321654987'),
+(12, 'Bad rust', 123000, 'M', 60, @MATERIAL_ALGODÓN, 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, '321654987'),
 (26, 'Aqua Fina', 200000, 'L', 47, 'Cotton 100%', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
-(27, 'Aqua Fina', 180000, 'M', 30, '@MATERIAL_ALGODÓN', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
-(28, 'Oblivions Mighty Trash', 150000, 'XL', 25, '@MATERIAL_ALGODÓN', 'Hoodie de algodón. Merch de Oblivions Mighty Trash', 4, '54984563'),
-(29, 'Baby Tears', 210000, 'L', 24, '@MATERIAL_ALGODÓN', 'Hoodie de algodón con motivos florales.', 4, '654321789'),
-(31, 'UrbanFit', 180000, 'L', 21, '@MATERIAL_ALGODÓN', 'CrewNeck ideal para el día a día.', 2, '4962354'),
-(32, 'NeoHood', 280000, 'M', 2, '@MATERIAL_ALGODÓN', 'Half Zip perfecto para todo tipo de climas.', 3, '147258369'),
-(33, 'Arctic Flow', 178000, 'L', 4, '@MATERIAL_ALGODÓN', 'Artic Flow, maneja la tranquilidad.', 3, '456789123'),
-(44, 'StormWear', 270000, 'M', 11, '@MATERIAL_ALGODÓN', 'Buso Half Zip a la moda.', 3, '@DOCUMENTO_PROVEEDOR_86396482'),
-(47, 'SkyWave', 110000, 'S', 32, '@MATERIAL_ALGODÓN', 'SkyWave, estiloso.', 4, '963852741'),
-(49, 'Certified Lover Hood', 190000, 'L', 12, '@MATERIAL_ALGODÓN', 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
-(50, 'Savage Mode', 230000, 'S', 23, '@MATERIAL_ALGODÓN', 'Hoodie de excelente calidad.', 4, '321654987');
+(27, 'Aqua Fina', 180000, 'M', 30, @MATERIAL_ALGODÓN, 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
+(28, 'Oblivions Mighty Trash', 150000, 'XL', 25, @MATERIAL_ALGODÓN, 'Hoodie de algodón. Merch de Oblivions Mighty Trash', 4, '54984563'),
+(29, 'Baby Tears', 210000, 'L', 24, @MATERIAL_ALGODÓN, 'Hoodie de algodón con motivos florales.', 4, '654321789'),
+(31, 'UrbanFit', 180000, 'L', 21, @MATERIAL_ALGODÓN, 'CrewNeck ideal para el día a día.', 2, '4962354'),
+(32, 'NeoHood', 280000, 'M', 2, @MATERIAL_ALGODÓN, 'Half Zip perfecto para todo tipo de climas.', 3, '147258369'),
+(33, 'Arctic Flow', 178000, 'L', 4, @MATERIAL_ALGODÓN, 'Artic Flow, maneja la tranquilidad.', 3, '456789123'),
+(44, 'StormWear', 270000, 'M', 11, @MATERIAL_ALGODÓN, 'Buso Half Zip a la moda.', 3, @DOCUMENTO_PROVEEDOR_86396482),
+(47, 'SkyWave', 110000, 'S', 32, @MATERIAL_ALGODÓN, 'SkyWave, estiloso.', 4, '963852741'),
+(49, 'Certified Lover Hood', 190000, 'L', 12, @MATERIAL_ALGODÓN, 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
+(50, 'Savage Mode', 230000, 'S', 23, @MATERIAL_ALGODÓN, 'Hoodie de excelente calidad.', 4, '321654987');
 
 -- --------------------------------------------------------
 
@@ -361,7 +361,7 @@ INSERT INTO `proveedor` (`documentoProveedor_PK`, `nombreProveedor`, `telefonoPr
 ('654321789', 'Telas del Sur S.A', '6543217', 'Calle 567, Ciudad Sur', 'ventas@alimsur.com', 4),
 ('789123456', 'BuzoCraft', '7891234', 'Avenida 234, Ciudad Nueva', 'pedidos@buzocraft.com', 4),
 ('852741963', 'Nautical Threads', '8527419', 'Avenida Jimenez 852, Centro', 'soporte@nthreads.com', 4),
-('@DOCUMENTO_PROVEEDOR_86396482', 'Soluciones LUM', '874876', 'Calle 45 # 76-98', 'solucioneslum@example.com', 4),
+(@DOCUMENTO_PROVEEDOR_86396482, 'Soluciones LUM', '874876', 'Calle 45 # 76-98', 'solucioneslum@example.com', 4),
 ('963852741', 'Productos Químicos S.A.', '9638527', 'Avenida 963, Parque Industrial', 'contacto@prodquimicos.com', 1),
 ('987654321', 'Proveedora Central Ltda', '9876543', 'Avenida Central 456', 'ventas@provcentral.com', 4);
 
