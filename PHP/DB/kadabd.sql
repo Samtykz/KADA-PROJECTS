@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 
 -- Definir constantes
 SET @CLIE_DOCUMENTO_FK_89012345= 89012345;
+SET @FECHA_PEDIDO_2024-09-28= 2024-09-28;
 
 --
 -- Base de datos: `kadabd`
@@ -139,8 +140,8 @@ CREATE TABLE `pedido` (
 INSERT INTO `pedido` (`id_Pedido_PK`, `fechaPedido`, `horaPedido`, `clie_Documento_FK`) VALUES
 (12, '2024-09-26', '14:57:00', @CLIE_DOCUMENTO_FK_89012345),
 (13, '2024-09-26', '15:40:00', '67890123'),
-(14, '2024-09-28', '13:55:00', '56789012'),
-(17, '2024-09-28', '16:45:00', @CLIE_DOCUMENTO_FK_89012345);
+(14, @FECHA_PEDIDO_2024-09-28, '13:55:00', '56789012'),
+(17, @FECHA_PEDIDO_2024-09-28, '16:45:00', @CLIE_DOCUMENTO_FK_89012345);
 
 -- --------------------------------------------------------
 
@@ -280,10 +281,10 @@ CREATE TABLE `venta` (
 --
 
 INSERT INTO `venta` (`vent_codigo_PK`, `vent_fecha`, `vent_Hora`, `vent_Subtotal`, `vent_IVA`, `vent_total`, `vent_MetodoPago`, `id_Pedido_FK`, `admi_Codigo_FK`) VALUES
-(11, '2024-09-28', '12:21:00', 400000, 19, 476000, 'NEQUI', 12, 11),
-(12, '2024-09-28', '14:07:00', 300000, 19, 357000, 'NEQUI', 14, 11),
-(13, '2024-09-28', '15:32:00', 123000, 19, 146370, 'VISA', 13, 11),
-(14, '2024-09-28', '16:46:00', 180000, 19, 214200, 'DAVIPLATA', 14, 11);
+(11, @FECHA_PEDIDO_2024-09-28, '12:21:00', 400000, 19, 476000, 'NEQUI', 12, 11),
+(12, @FECHA_PEDIDO_2024-09-28, '14:07:00', 300000, 19, 357000, 'NEQUI', 14, 11),
+(13, @FECHA_PEDIDO_2024-09-28, '15:32:00', 123000, 19, 146370, 'VISA', 13, 11),
+(14, @FECHA_PEDIDO_2024-09-28, '16:46:00', 180000, 19, 214200, 'DAVIPLATA', 14, 11);
 
 --
 -- Índices para tablas volcadas
