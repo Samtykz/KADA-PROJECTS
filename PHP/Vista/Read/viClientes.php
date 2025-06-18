@@ -20,7 +20,7 @@
 
 <body style="position: relative; padding-bottom: 3rem; min-height: 100vh;">
 <script>
-    function confirmarDesactivacion(){  
+    function confirmarDesactivacion(){
       return confirm("¿Estás seguro de desactivar este cliente? Podrás reactivarlo más tarde.");
     }
     function confirmarReactivacion(){
@@ -39,15 +39,16 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
-        </ul>        
+        </ul>
       </div>
-    </div>        
+    </div>
   </nav>
   <br><br>
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE CLIENTES</h1>
   <br>
   <?php
-  include "../../Controlador/DesactivarCliente.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Controlador/DesactivarCliente.php"; // NOSONAR
   ?>
   
   <main class="conntainer" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
@@ -68,7 +69,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php"; 
+        /** @SuppressWarnings("php:S4833") */
+        include_once "../../Modelo/Conexion.php"; // NOSONAR
         
         $sql = $conexion->query("SELECT * FROM cliente");
         
@@ -76,7 +78,7 @@
           <tr>
             <td><?=$datos->clie_Documento_PK?></td>
             <td><?=$datos->clie_nombre?></td>
-            <td><?=$datos->clie_apellido?></td>   
+            <td><?=$datos->clie_apellido?></td>
             <td><?=$datos->clie_Telefono?></td>
             <td><?=$datos->clie_Telefono2?></td>
             <td><?=$datos->clie_direccion?></td>
