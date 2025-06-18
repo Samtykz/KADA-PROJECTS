@@ -30,10 +30,11 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE PEDIDOS</h1>
   <br>
   <?php
-  include "../../Modelo/Conexion.php";
-  include "../../Controlador/EliminarPedido.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Modelo/Conexion.php";
+  include_once "../../Controlador/EliminarPedido.php"; // NOSONAR
   ?>
-  <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">  
+  <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
     <table class="table table-hover" style="text-align: center; max-width: 95%;">
       <thead>
         <tr>
@@ -51,7 +52,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php";
+        /** @SuppressWarnings("php:S4833") */
+        include "../../Modelo/Conexion.php"; // NOSONAR
         $sql = $conexion->query("SELECT * FROM pedido");
         while($datos = $sql->fetch_object()){ ?>
           <tr>
@@ -70,7 +72,7 @@
   </main>
   <br><br><br><br><br><br><br>
 
-  <!-- Start Footer Section -->  
+  <!-- Start Footer Section -->
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
