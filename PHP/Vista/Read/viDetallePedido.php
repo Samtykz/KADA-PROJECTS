@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
-
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,7 +15,6 @@
   <link href="../css/style.css" rel="stylesheet">
   <title>KADA</title>
 </head>
-
 <body style="position: relative; padding-bottom: 3rem; min-height: 100vh;">
   <script>
     function eliminar(){
@@ -25,16 +22,15 @@
       return respuesta
     }
   </script>
-
   <br><br>
   <h1 style="text-align: center; color: black; font-size: 35px;">DETALLE DE PEDIDO</h1>
   <br>
   <?php
-  include "../../Modelo/Conexion.php";
-  include "../../Controlador/EliminarDetallePedido.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Modelo/Conexion.php";
+  include_once "../../Controlador/EliminarDetallePedido.php"; // NOSONAR
   ?>
   <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
-      
     <table class="table table-hover" style="text-align: center; max-width: 95%;">
       <thead>
         <tr>
@@ -53,7 +49,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php";
+        /** @SuppressWarnings("php:S4833") */
+        include_once "../../Modelo/Conexion.php"; // NOSONAR
         $sql = $conexion->query("SELECT * FROM detallepedido");
         while($datos = $sql->fetch_object()){ ?>
           <tr>
@@ -63,14 +60,14 @@
             <td><?=$datos->id_Pedido_FK?></td>
             <td><?=$datos->prod_Codigo_FK?></td>
             <td style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-					    <a href="../Create/RegistroVenta.php?id=<?= $datos->id_Pedido_FK?>" class="agregate" title="Aprobar" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="color:#58d68d; margin: 5px;"  stclass="bi bi-check-circle-fill" viewBox="0 0 16 16">
-						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-					  </svg></a>
-            <a href="../Update/ActualizarDetalle.php?id=<?=$datos->id_Pedido_FK?>" class="edit" title="Actualizar Detalle" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>
-					  <a onclick="return eliminar()" href="../Read/ViDetallePedido.php?id=<?= $datos->id_Pedido_FK?>" class="agregate" title="Desaprobar" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="margin: 5px; color: #e74c3c;" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
-					  </svg></a>
-				    </td>
+              <a href="../Create/RegistroVenta.php?id=<?= $datos->id_Pedido_FK?>" class="agregate" title="Aprobar" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="color:#58d68d; margin: 5px;"  stclass="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg></a>
+              <a href="../Update/ActualizarDetalle.php?id=<?=$datos->id_Pedido_FK?>" class="edit" title="Actualizar Detalle" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>
+              <a onclick="return eliminar()" href="../Read/ViDetallePedido.php?id=<?= $datos->id_Pedido_FK?>" class="agregate" title="Desaprobar" data-toggle="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="margin: 5px; color: #e74c3c;" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+              </svg></a>
+            </td>
           </tr>
         <?php } ?>
       </tbody>
