@@ -29,13 +29,13 @@
       <div class="col-6" style="margin: 0 auto">
         <form action="../Controlador/loginAuth.php" method="POST">
           <div class="mb-3">
-            <label class="form-label">Ingresa Correo Electrónico</label>
-            <input type="email" class="form-control" name="mail" aria-describedby="emailHelp">
+            <label class="form-label" for="mail">Ingresa Correo Electrónico</label>
+            <input type="email" class="form-control" id="mail" name="mail" aria-describedby="emailHelp">
             <div class="form-text">Tu correo nunca será compartido con nadie más.</div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Ingresar Contraseña</label>
-            <input type="password" class="form-control" name="pass">
+            <label class="form-label" for="pass">Ingresar Contraseña</label>
+            <input type="password" class="form-control" id="pass" name="pass">
           </div>
           <input type="submit" class="btn btn-secondary me-2" name="btnLogin" value="Iniciar Sesión">
         </form>
@@ -81,3 +81,4 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+
