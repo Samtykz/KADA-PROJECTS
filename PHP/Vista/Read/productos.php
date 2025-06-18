@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
-
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
-
  
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,7 +15,6 @@
   <link href="../css/style.css" rel="stylesheet">
   <title>KADA</title>
 </head>
-
 <body style="position: relative; padding-bottom: 3rem; min-height: 100vh;">
 <script>
     function eliminar(){
@@ -25,8 +22,6 @@
       return respuesta
     }
   </script>
-
-
   <br><br>
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE PRODUCTOS</h1>
   <br>
@@ -35,7 +30,6 @@
   include_once "../../Modelo/Conexion.php";
   include_once "../../Controlador/EliminarProducto.php"; // NOSONAR
   ?>
-
   <main class="container-fluid" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
     <table class="table table-hover" style="text-align: center;">
       <thead>
@@ -71,21 +65,17 @@
           <td style="display: flex; flex-direction: row; wrap: wrap;">
             <a href="../Update/ActualizarProd.php?id=<?=$datos->prod_Codigo_PK?>" class="edit" title="Actualizar Producto" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>
             <a onclick="return eliminar()" href="../Read/productos.php?id=<?= $datos->prod_Codigo_PK?>" class="delete" title="Eliminar Producto" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #ec7063;">&#xE872;</i></a>
-            <a href="../Create/RegistrarImagen.php?prod_Codigo=<?=$datos->prod_Codigo_PK?>" class="edit" title="Subir Imagen"><img src="../images/subirimagen.svg" style="margin: 5px;" alt="Icono Subir Imagen"></a>
-            
-            
-          
+            <a href="../Create/RegistrarImagen.php?prod_Codigo=<?=$datos->prod_Codigo_PK?>" class="edit" title="Subir Imagen"><img src="../images/subirimagen.svg" style="margin: 5px;" alt="Icono Subir"></a>
           </td>
         </tr>
         <?php } ?>
       </tbody>
     </table>
   </main>
-
   <br><br><br><br><br><br><br>
-
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
