@@ -23,7 +23,7 @@
       <div class="col-6" style="margin: 0 auto">
         <form method="POST" onsubmit="return validarFormulario()">
           <?php
-		  /** @SuppressWarnings("php:S4833") */
+          /** @SuppressWarnings("php:S4833") */
             include_once "../../Modelo/Conexion.php";
             include_once "../../Controlador/ConRegistrarPedido.php"; // NOSONAR
           ?>
@@ -104,3 +104,4 @@
 </script>
 </body>
 </html>
+
