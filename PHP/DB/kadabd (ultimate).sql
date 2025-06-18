@@ -20,6 +20,8 @@ SET @ESTADO_INACTIVO = 'inactivo';
 SET @APELLIDO_BELLO = 'Bello';
 SET @DOCUMENTO_PROVEEDOR_86396482 = '86396482';
 SET @MATERIAL_ALGODÓN = 'algodón';
+SET @PROVEEDOR_321654987 = 321654987;
+
 
 --
 -- Base de datos: `kadabd`
@@ -291,13 +293,13 @@ INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `pr
 (1, 'Manantial', 250000, 'M', 45, @MATERIAL_ALGODÓN, 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, @DOCUMENTO_PROVEEDOR_86396482),
 (2, 'Aqua', 340000, 'L', 56, @MATERIAL_ALGODÓN, 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
 (3, 'Zipper', 200000, 'XL', 56, 'Mezcla de algodón y ', 'Buzo con medio cierre, mezcla de algodón y poliéster, versátil y moderno', 3, '456789123'),
-(4, 'Lenix', 80000, 'S', 56, 'Algodón orgánico', 'Hoodie color rojo de algodón perchado, con capucha y bolsillo frontal', 4, '321654987'),
+(4, 'Lenix', 80000, 'S', 56, 'Algodón orgánico', 'Hoodie color rojo de algodón perchado, con capucha y bolsillo frontal', 4, @PROVEEDOR_321654987),
 (6, 'Austin', 210000, 'L', 23, @MATERIAL_ALGODÓN, 'Crewneck hecho en algodón, elegante y confortable', 2, '654321789'),
 (8, 'RutsEze', 300000, 'L', 32, @MATERIAL_ALGODÓN, 'Hoddie de algodón, casual y funcional para todo tipo de actividades', 4, '963852741'),
 (9, 'MF DOOM Merch Hoddie', 290000, 'S', 55, @MATERIAL_ALGODÓN, 'Buzo oversize de algodón color verde oscuro, ideal para un estilo casual y relajado', 1, '258369147'),
 (10, 'gaete', 140000, 'M', 65, @MATERIAL_ALGODÓN, 'Buzo de cuello redondo de algodón ajustado y flexible', 2, '852741963'),
-(11, 'Algarete', 218000, 'M', 60, 'Algodon', 'Buzo oversize color negro echo de algodón', 1, '321654987'),
-(12, 'Bad rust', 123000, 'M', 60, @MATERIAL_ALGODÓN, 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, '321654987'),
+(11, 'Algarete', 218000, 'M', 60, 'Algodon', 'Buzo oversize color negro echo de algodón', 1, @PROVEEDOR_321654987),
+(12, 'Bad rust', 123000, 'M', 60, @MATERIAL_ALGODÓN, 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, @PROVEEDOR_321654987),
 (26, 'Aqua Fina', 200000, 'L', 47, 'Cotton 100%', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
 (27, 'Aqua Fina', 180000, 'M', 30, @MATERIAL_ALGODÓN, 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
 (28, 'Oblivions Mighty Trash', 150000, 'XL', 25, @MATERIAL_ALGODÓN, 'Hoodie de algodón. Merch de Oblivions Mighty Trash', 4, '54984563'),
@@ -308,7 +310,7 @@ INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `pr
 (44, 'StormWear', 270000, 'M', 11, @MATERIAL_ALGODÓN, 'Buso Half Zip a la moda.', 3, @DOCUMENTO_PROVEEDOR_86396482),
 (47, 'SkyWave', 110000, 'S', 32, @MATERIAL_ALGODÓN, 'SkyWave, estiloso.', 4, '963852741'),
 (49, 'Certified Lover Hood', 190000, 'L', 12, @MATERIAL_ALGODÓN, 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
-(50, 'Savage Mode', 230000, 'S', 23, @MATERIAL_ALGODÓN, 'Hoodie de excelente calidad.', 4, '321654987');
+(50, 'Savage Mode', 230000, 'S', 23, @MATERIAL_ALGODÓN, 'Hoodie de excelente calidad.', 4, @PROVEEDOR_321654987);
 
 -- --------------------------------------------------------
 
@@ -353,7 +355,7 @@ CREATE TABLE `proveedor` (
 INSERT INTO `proveedor` (`documentoProveedor_PK`, `nombreProveedor`, `telefonoProveedor`, `direccionProveedor`, `correoProveedor`, `id_TipoDocumento_FK`) VALUES
 ('147258369', 'Buzos & Textiles S.A.', '1472583', 'Calle de la Innovación 741', 'info@bztextiles.com', 4),
 ('258369147', 'Soluciones Agrícolas SRL', '2583691', 'Carretera Agraria 258, Zona Rural', 'ventas@solagricolas.com', 4),
-('321654987', 'TelaMarina', '3216549', 'Calle 321, Parque Empresarial', 'soporte@marinatela.com', 4),
+(@PROVEEDOR_321654987, 'TelaMarina', '3216549', 'Calle 321, Parque Empresarial', 'soporte@marinatela.com', 4),
 ('4362782', 'Cafam', '34213123', 'CALLE 12 SUR #21-83', 'cafam90907@gmail.com', 4),
 ('456789123', 'Suministros Industriales SRL', '4567891', 'Carretera Industrial 78', 'info@suministrosind.com', 4),
 ('4962354', 'Dispensador de telas AMC', '3453683749', 'Carrera 52c ', 'amc@ejemplo.com', 4),
