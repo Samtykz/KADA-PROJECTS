@@ -118,7 +118,7 @@
     console.log("El script se esta ejecutando...");
     // Obtener el elemento del mensaje de error
     const mensajeError = document.getElementById("mensajeError");
-    // Expresiones regulares para validaciones  
+    // Expresiones regulares para validaciones
     const regexIdProducto = /^\d{1,10}$/; // Entre 1 y 10 dígitos
     const regexCantidad = /^[1-9]\d*$/; // Números enteros positivos (no cero)
     const regexPrecio = /^\d+(\.\d{1,2})?$/; // Números con hasta 2 decimales
@@ -130,7 +130,7 @@
       const idProNuevo = document.getElementById("idProNue").value.trim();
       const canProPedNuevo = document.getElementById("CanNueva").value.trim();
       const preUnitarioNuevo = document.getElementById("preNuevo").value.trim();
-      const metodoNuevo = document.getElementById("metNuevo").value.trim(); 
+      const metodoNuevo = document.getElementById("metNuevo").value.trim();
       const subtoNuevo = document.getElementById("subNuevo").value.trim();
       const idPedidoNuevo = document.getElementById("idPedNuevo").value.trim();
       // Verificar si todos los campos están vacíos
@@ -181,3 +181,4 @@
   </script>
 </body>
 </html>
+
