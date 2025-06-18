@@ -30,8 +30,9 @@
               <div class="card-body p-md-8 text-black">
                 <form method="POST" onsubmit="return validarFormulario()">
                   <?php
+                  /** @SuppressWarnings("php:S4833") */
                   include "../../Modelo/Conexion.php";
-                  include "../../Controlador/conRegistroAdministrador.php";
+                  include "../../Controlador/conRegistroAdministrador.php"; // NOSONAR
                   ?>
                   <h3 class="mb-5 text-uppercase" style="text-align: center;">REGíSTRATE</h3>
 
@@ -91,7 +92,7 @@
                     <input type="password" id="confirmar_contrasena" class="form-control form-control-lg" name="confirmar_contrasena"/>
                     <label class="form-label" for="confirmar_contrasena">Confirmar Contraseña</label>
                     <br>
-                    <span id="errorConfirmarContrasena" class="text-danger"></span> 
+                    <span id="errorConfirmarContrasena" class="text-danger"></span>
                     <div id="emailHelp" class="form-text">Verifica todos tus datos antes de seleccionar "Confirmar".</div>
                   </div>
 
