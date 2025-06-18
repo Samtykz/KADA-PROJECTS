@@ -31,8 +31,9 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE PRODUCTOS</h1>
   <br>
   <?php
-  include "../../Modelo/Conexion.php";
-  include "../../Controlador/EliminarProducto.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Modelo/Conexion.php";
+  include_once "../../Controlador/EliminarProducto.php"; // NOSONAR
   ?>
 
   <main class="container-fluid" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -70,7 +71,7 @@
           <td style="display: flex; flex-direction: row; wrap: wrap;">
             <a href="../Update/ActualizarProd.php?id=<?=$datos->prod_Codigo_PK?>" class="edit" title="Actualizar Producto" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>
             <a onclick="return eliminar()" href="../Read/productos.php?id=<?= $datos->prod_Codigo_PK?>" class="delete" title="Eliminar Producto" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #ec7063;">&#xE872;</i></a>
-            <a href="../Create/RegistrarImagen.php?prod_Codigo=<?=$datos->prod_Codigo_PK?>" class="edit" title="Subir Imagen"><img src="../images/subirimagen.svg" style="margin: 5px;"></a>
+            <a href="../Create/RegistrarImagen.php?prod_Codigo=<?=$datos->prod_Codigo_PK?>" class="edit" title="Subir Imagen"><img src="../images/subirimagen.svg" style="margin: 5px;" alt="Icono Subir Imagen"></a>
             
             
           

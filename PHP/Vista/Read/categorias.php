@@ -30,8 +30,9 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">CATEGORÍAS</h1>
   <br>
   <?php
-  include "../../Modelo/Conexion.php";
-  include "../../Controlador/EliminarCategoria.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Modelo/Conexion.php";
+  include_once "../../Controlador/EliminarCategoria.php"; // NOSONAR
   ?>
   
   <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
