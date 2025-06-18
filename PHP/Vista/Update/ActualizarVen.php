@@ -107,7 +107,7 @@
         mensajeError.innerHTML = errores.join("<br>"); // Mostrar todos los errores
         mensajeError.style.color = "red"; // Color del texto
         mensajeError.style.fontWeight = "bold"; // Texto en negrita
-        mensajeError.style.marginTop = "10px"; // Espacio superior  
+        mensajeError.style.marginTop = "10px"; // Espacio superior
         mensajeError.style.textAlign = "left"; // Alinear el texto a la izquierda
         // Evitar que el formulario se envíe
         event.preventDefault();
