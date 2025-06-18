@@ -114,8 +114,8 @@
                     </div>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label">Tipo de Documento Nuevo</label>
-                    <select name="tipoDocumentoNuevo" class="form-control">
+                    <label class="form-label" for="tipoDocumentoNuevo">Tipo de Documento Nuevo</label>
+                    <select id="tipoDocumentoNuevo" name="tipoDocumentoNuevo" class="form-control">
                       <option value="1">Cédula de Ciudadanía</option>
                       <option value="2">Tarjeta de Identidad</option>
                       <option value="3">Cédula Extranjera</option>
@@ -243,3 +243,4 @@
   </script>
 </body>
 </html>
+
