@@ -24,9 +24,9 @@
       return confirm("¿Estás seguro de desactivar este Administrador? Podrás reactivarlo más tarde.");
     }
     function confirmarReactivacion(){
-      return confirm("¿Estás seguro de reactivar este Administrador?");   
+      return confirm("¿Estás seguro de reactivar este Administrador?");
     }
-  </script> 
+  </script>
 
   <!-- Start Header/Navigation -->
 
@@ -34,8 +34,9 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE ADMINISTRADORES</h1>
   <br>
   <?php
-  include "../../Controlador/DesactivarAdmin.php";
-  ?>  
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Controlador/DesactivarAdmin.php"; // NOSONAR
+  ?>
   <main class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
     <table class="table table-hover" style="text-align: center; max-width: 95%;">
       <thead>
@@ -57,7 +58,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php";  
+        /** @SuppressWarnings("php:S4833") */
+        include_once "../../Modelo/Conexion.php"; // NOSONAR
         $sql = $conexion->query("SELECT * FROM administrador");
         while($datos = $sql->fetch_object()){ ?>
         <tr>
@@ -72,7 +74,7 @@
             </td>
           <td style="display: flex; justify-content: center;">
 
-            <a href="../Update/ActualizarDatosAdmin.php?id=<?= $datos->admi_Codigo_PK?>" class="edit" title="Actualizar Administrador" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>  
+            <a href="../Update/ActualizarDatosAdmin.php?id=<?= $datos->admi_Codigo_PK?>" class="edit" title="Actualizar Administrador" data-toggle="tooltip"><i class="material-icons" style="margin: 5px; color: #f4d03f;">&#xE254;</i></a>
             <?php if ($datos->estado == 'activo') { ?>
                 <a onclick="return confirmarDesactivacion()" href="../Read/viAdministradores.php?id=<?= $datos->admi_Codigo_PK?>&action=desactivar" class="delete" title="Desactivar" data-toggle="tooltip">
                   <i class="material-icons" style="margin: 5px; color: #ec7063;">&#xE872;</i></a>
