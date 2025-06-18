@@ -3,7 +3,6 @@
 session_start();
 /** @SuppressWarnings("php:S4833") */
 include_once '../../Modelo/Conexion.php'; // NOSONAR
-
 // Procesar formulario si se envió
 if (isset($_POST['btnSubirImagen'])) {
     // Validar campos requeridos
@@ -13,7 +12,6 @@ if (isset($_POST['btnSubirImagen'])) {
         header("Location: ".$_SERVER['PHP_SELF']);
         exit;
     }
-
     // Asignar valores con validación
     $codigoImagenes = $_POST['codigoImagenes'] ?? '';
     $prod_Codigo = $_POST['prod_Codigo'];
@@ -77,11 +75,9 @@ if (isset($_POST['btnSubirImagen'])) {
     header("Location: ".$_SERVER['PHP_SELF']);
     exit;
 }
-
 // Obtener el código del producto desde la URL
 $llave = isset($_GET['prod_Codigo']) ? $_GET['prod_Codigo'] : '';
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -89,10 +85,8 @@ $llave = isset($_GET['prod_Codigo']) ? $_GET['prod_Codigo'] : '';
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="favicon.png">
-
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
-
   <!-- Bootstrap CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -105,14 +99,15 @@ $llave = isset($_GET['prod_Codigo']) ? $_GET['prod_Codigo'] : '';
     td { padding: 10px; }
   </style>
 </head>
-
 <body style="position: relative; padding-bottom: 8rem; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
-
 <div class="container mt-5" style="width: 100%; max-width: 500px; text-align: center;">
   <h2 class="mb-4">Subir Imágenes de Producto</h2>
-
   <form action="" method="post" enctype="multipart/form-data">
     <table class="table-bordered" style="width: 100%; margin: 0 auto;">
+      <tr>
+        <th>Código</th>
+        <th>Valor</th>
+      </tr>
       <tr>
         <td><label for="codigoImagenes">Código:</label></td>
         <td>
@@ -140,7 +135,6 @@ $llave = isset($_GET['prod_Codigo']) ? $_GET['prod_Codigo'] : '';
     </table>
   </form>
 </div>
-
 <?php
 // Mostrar mensajes de sesión
 if(isset($_SESSION['mensaje'])) {
@@ -149,6 +143,6 @@ if(isset($_SESSION['mensaje'])) {
     unset($_SESSION['tipo_mensaje']);
 }
 ?>
-
 </body>
 </html>
+
