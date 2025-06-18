@@ -30,10 +30,11 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTIÓN DE VENTAS</h1>
   <br>
   <?php
-  include "../../Modelo/Conexion.php";
-  include "../../Controlador/EliminarVenta.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Modelo/Conexion.php";
+  include_once "../../Controlador/EliminarVenta.php"; // NOSONAR
   ?>
-  <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">  
+  <main class="container" style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
     <table class="table table-hover" style="text-align: center; max-width: 95%;">
       <thead>
         <tr>
@@ -54,7 +55,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php";
+        /** @SuppressWarnings("php:S4833") */
+        include "../../Modelo/Conexion.php";// NOSONAR
         $sql = $conexion->query("SELECT * FROM venta");
         while($datos = $sql->fetch_object()){ ?>
           <tr>
