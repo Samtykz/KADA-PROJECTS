@@ -117,7 +117,7 @@
             document.getElementById('errorPreUni').innerText ="El precio es obligatorio";
             return false;
         }
-        // Validar metodo de pago 
+        // Validar metodo de pago
             if (metodoPa ==="") {
                 document.getElementById('errorMetodo').innerText ="El metodo de pago es obligatorio";
                 return false;

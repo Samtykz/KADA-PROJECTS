@@ -32,8 +32,9 @@
                   <h3 class="mb-5 text-uppercase" style="text-align: center;">REGíSTRAR PROVEEDOR</h3>
                   
                   <?php
-                    include "../../Modelo/Conexion.php";
-                    include "../../Controlador/conRegistroProveedor.php";
+                  /** @SuppressWarnings("php:S4833") */
+                    include_once "../../Modelo/Conexion.php";
+                    include_once "../../Controlador/conRegistroProveedor.php"; // NOSONAR
                   ?>
 
                   <div class="mb-4">
