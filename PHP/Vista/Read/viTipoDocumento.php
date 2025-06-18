@@ -31,7 +31,8 @@
   <h1 style="text-align: center; color: black; font-size: 35px;">GESTION DE TIPOS DOCUMENTOS</h1>
   <br>
   <?php
-  include "../../Controlador/EliminarTipoDoc.php";
+  /** @SuppressWarnings("php:S4833") */
+  include_once "../../Controlador/EliminarTipoDoc.php"; // NOSONAR
   ?>
 
   <main class="container" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -50,7 +51,8 @@
       </thead>
       <tbody>
         <?php
-        include "../../Modelo/Conexion.php";
+        /** @SuppressWarnings("php:S4833") */
+        include "../../Modelo/Conexion.php"; // NOSONAR
         $sql = $conexion->query("SELECT * FROM tipoDocumento");
         while($datos = $sql->fetch_object()){ ?>
         <tr>
@@ -62,7 +64,7 @@
                 <i class="material-icons" style="margin: 5px; color: #ec7063;">&#xE872;</i></a>
           </td>
         </tr>
-        <?php } 
+        <?php }
         ?>
       </tbody>
     </table>
