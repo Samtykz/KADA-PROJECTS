@@ -17,6 +17,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- Definir constantes
+SET @CLIE_DOCUMENTO_FK_89012345= 89012345;
+
 --
 -- Base de datos: `kadabd`
 --
@@ -86,7 +89,7 @@ INSERT INTO `cliente` (`clie_Documento_PK`, `clie_nombre`, `clie_apellido`, `cli
 ('56789012', 'Javier', 'Pérez', '5555432', '5559876', 'Calle del Carmen 890', 'javier.perez@example.com', 'javier.pz', 3, NULL),
 ('67890123', 'Monica', 'Acuña', '45776', '4567893', 'Calle 24', 'monica@ejemplo.com', 'MonicaAc', 1, 'MonicaAc'),
 ('78901234', 'Carlos', 'González', '5553210', '5557654', 'Calle Mayor 456', 'carlos.gonzalez@example.com', 'carlos.glez', 1, NULL),
-('89012345', 'Isabel', 'Ruiz', '5552109', '5556543', 'Plaza España 789', 'isabel.ruiz@example.com', 'isabel.rz', 2, NULL);
+(@CLIE_DOCUMENTO_FK_89012345, 'Isabel', 'Ruiz', '5552109', '5556543', 'Plaza España 789', 'isabel.ruiz@example.com', 'isabel.rz', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,10 +137,10 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_Pedido_PK`, `fechaPedido`, `horaPedido`, `clie_Documento_FK`) VALUES
-(12, '2024-09-26', '14:57:00', '89012345'),
+(12, '2024-09-26', '14:57:00', @CLIE_DOCUMENTO_FK_89012345),
 (13, '2024-09-26', '15:40:00', '67890123'),
 (14, '2024-09-28', '13:55:00', '56789012'),
-(17, '2024-09-28', '16:45:00', '89012345');
+(17, '2024-09-28', '16:45:00', @CLIE_DOCUMENTO_FK_89012345);
 
 -- --------------------------------------------------------
 
