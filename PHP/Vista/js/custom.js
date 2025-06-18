@@ -3,7 +3,7 @@
   const tinyslider = function() {
     const el = document.querySelectorAll('.testimonial-slider');
     if (el.length > 0) {
-      const slider = tns({
+      tns({
         container: '.testimonial-slider',
         items: 1,
         axis: "horizontal",
