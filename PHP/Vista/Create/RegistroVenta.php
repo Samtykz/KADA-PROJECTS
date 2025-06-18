@@ -71,7 +71,7 @@
                     <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"><a href="../Read/viDetallePedido.php" style="text-decoration: none; color:#f5eef8">Cancelar</a></button>
                     <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary btn-lg ms-2" name="btnRegistrarVenta">Confirmar</button>
                   </div>
-                  <br>  
+                  <br>
                 </form>
               </div>
             </div>
