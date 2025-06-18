@@ -18,8 +18,9 @@
   <?php
     /** @SuppressWarnings("php:S4833") */
     include_once "../../Modelo/Conexion.php"; // NOSONAR
-    $id = $_GET["id"];
-    $sql = $conexion->query("SELECT * from detallepedido where id_Pedido_FK =$id");
+    // Only allow integer IDs from GET variable for security
+    $id = isset($_GET["id"]) && ctype_digit($_GET["id"]) ? (int)$_GET["id"] : 0;
+    $sql = $conexion->query("SELECT * from detallepedido where id_Pedido_FK = $id");
   ?>
   <section class="h-100">
     <div class="container py-5 h-100">
@@ -30,10 +31,10 @@
               <div class="card-body p-md-8 text-black">
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Modificar El Detalle de Pedido</p>
                 <form method="POST" id="formActualizarDetallePedido">
-                  <input type="hidden" name="id" value="<?= $_GET["id"] ?>" readonly>
+                  <input type="hidden" name="id" value="<?php echo htmlspecialchars($id, ENT_QUOTES, 'UTF-8'); ?>" readonly>
                   <?php
                   /** @SuppressWarnings("php:S4833") */
-                  include  "../../Controlador/ActualizarDetallePedido.php"; // NOSONAR
+                  include_once  "../../Controlador/ActualizarDetallePedido.php"; // NOSONAR
                   ?>
                   <div class="row">
                     <div class="col-md-6 mb-4">
@@ -47,8 +48,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <input type="number" class="form-control" name="cantidad" value="<?php echo $detalle["cantidadProductoPedido"];?>" readonly>
-                      <label class="form-label">Cantidad Producto Pedido</label>
+                      <input type="number" id="cantidadProductoPedido" class="form-control" name="cantidad" value="<?php echo $detalle["cantidadProductoPedido"];?>" readonly>
+                      <label for="cantidadProductoPedido" class="form-label">Cantidad Producto Pedido</label>
                     </div>
                     <div class="col-md-6 mb-4">
                       <input type="number" id="CanNueva" class="form-control" name="cantidadNueva">
@@ -123,8 +124,6 @@
     const regexPrecio = /^\d+(\.\d{1,2})?$/; // Números con hasta 2 decimales
     const regexSubtotal = /^\d+(\.\d{1,2})?$/; // Igual que precio
     const regexIdPedido = /^\d{1,10}$/; // Entre 1 y 10 dígitos
-    //const regexMetodoPago = ... // No definido en el original, así que lo quitamos de la validación
-
     function validarFormulario(event){
       console.log("Validando formulario...");
       // Obtener los valores de los campos
@@ -134,7 +133,6 @@
       const metodoNuevo = document.getElementById("metNuevo").value.trim(); 
       const subtoNuevo = document.getElementById("subNuevo").value.trim();
       const idPedidoNuevo = document.getElementById("idPedNuevo").value.trim();
-      
       // Verificar si todos los campos están vacíos
       if (!idProNuevo && !canProPedNuevo && !preUnitarioNuevo && !metodoNuevo && !subtoNuevo && !idPedidoNuevo) {
         mensajeError.textContent = "Todos los campos están vacíos. Debes ingresar al menos un valor para actualizar.";
@@ -155,7 +153,6 @@
       if (preUnitarioNuevo && !regexPrecio.test(preUnitarioNuevo)) {
         errores.push("El precio debe ser un número con hasta 2 decimales (ej: 25.99).");
       }
-      // Validar metodo de pago: Se eliminó el regexMetodoPago porque no existe en el código original.
       if (subtoNuevo && !regexSubtotal.test(subtoNuevo)) {
         errores.push("El subtotal debe ser un número con hasta 2 decimales.");
       }
