@@ -58,8 +58,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <input type="number" class="form-control" name="precioUnidad" value="<?php echo $detalle["precioUnidadProducto"];?>" readonly>
-                      <label class="form-label">Precio Por Unidad del Producto.</label>
+                      <input type="number" id="precioUnidadProducto" class="form-control" name="precioUnidad" value="<?php echo $detalle["precioUnidadProducto"];?>" readonly>
+                      <label for="precioUnidadProducto" class="form-label">Precio Por Unidad del Producto.</label>
                     </div>
                     <div class="col-md-6 mb-4">
                       <input type="number" id="preNuevo" class="form-control" name="precioNuevo">
@@ -68,8 +68,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <input type="text" name="metodoP_venta" class="form-control form-control-lg" value="<?php echo $detalle["metodo_pago"]; ?>" readonly>
-                      <label class="form-label">Método de Pago</label>
+                      <input type="text" id="metodoPagoActual" name="metodoP_venta" class="form-control form-control-lg" value="<?php echo $detalle["metodo_pago"]; ?>" readonly>
+                      <label for="metodoPagoActual" class="form-label">Método de Pago</label>
                     </div>
                     <div class="col-md-6 mb-4">
                       <input type="text" id="metNuevo" name="metodoP_venta" class="form-control form-control-lg">
@@ -78,8 +78,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <input type="number" class="form-control" name="subtotal" value="<?php echo $detalle["subtotalPedidoProducto"];?>" readonly>
-                      <label class="form-label">Subtotal</label>
+                      <input type="number" id="subtotalPedidoProducto" class="form-control" name="subtotal" value="<?php echo $detalle["subtotalPedidoProducto"];?>" readonly>
+                      <label for="subtotalPedidoProducto" class="form-label">Subtotal</label>
                     </div>
                     <div class="col-md-6 mb-4">
                       <input type="number" id="subNuevo" class="form-control" name="subNuevo">
@@ -88,8 +88,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4 ">
-                      <input type="number" class="form-control" name="Ped_id" value="<?php echo $detalle["id_Pedido_FK"];?>" readonly>
-                      <label class="form-label">ID del Pedido</label>
+                      <input type="number" id="idPedidoActual" class="form-control" name="Ped_id" value="<?php echo $detalle["id_Pedido_FK"];?>" readonly>
+                      <label for="idPedidoActual" class="form-label">ID del Pedido</label>
                     </div>
                     <div class="col-md-6 mb-4">
                       <input type="number" id="idPedNuevo" class="form-control" name="idPedidoNuevo">
