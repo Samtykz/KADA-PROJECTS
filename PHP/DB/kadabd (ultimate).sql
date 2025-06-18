@@ -288,27 +288,27 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`prod_Codigo_PK`, `prod_Nombre`, `prod_PrecioVenta`, `prod_UnidadMedida`, `prod_Stock`, `prod_Material`, `prod_Descripcion`, `id_Categoria_FK`, `documentoProveedor_FK`) VALUES
-(1, 'Manantial', 250000, 'M', 45, 'MATERIAL_ALGODON', 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, 'DOCUMENTO_PROVEEDOR_86396482'),
-(2, 'Aqua', 340000, 'L', 56, 'MATERIAL_ALGODON', 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
+(1, 'Manantial', 250000, 'M', 45, '@MATERIAL_ALGODÓN', 'Buzo oversize de algodón perchado, cómodo y perfecto para el uso diario', 1, 'DOCUMENTO_PROVEEDOR_86396482'),
+(2, 'Aqua', 340000, 'L', 56, '@MATERIAL_ALGODÓN', 'Buzo de cuello redondo color negro hecho de poliéster, ideal para el invierno', 2, '987654321'),
 (3, 'Zipper', 200000, 'XL', 56, 'Mezcla de algodón y ', 'Buzo con medio cierre, mezcla de algodón y poliéster, versátil y moderno', 3, '456789123'),
 (4, 'Lenix', 80000, 'S', 56, 'Algodón orgánico', 'Hoodie color rojo de algodón perchado, con capucha y bolsillo frontal', 4, '321654987'),
-(6, 'Austin', 210000, 'L', 23, 'MATERIAL_ALGODON', 'Crewneck hecho en algodón, elegante y confortable', 2, '654321789'),
-(8, 'RutsEze', 300000, 'L', 32, 'MATERIAL_ALGODON', 'Hoddie de algodón, casual y funcional para todo tipo de actividades', 4, '963852741'),
-(9, 'MF DOOM Merch Hoddie', 290000, 'S', 55, 'MATERIAL_ALGODON', 'Buzo oversize de algodón color verde oscuro, ideal para un estilo casual y relajado', 1, '258369147'),
-(10, 'gaete', 140000, 'M', 65, 'MATERIAL_ALGODON', 'Buzo de cuello redondo de algodón ajustado y flexible', 2, '852741963'),
+(6, 'Austin', 210000, 'L', 23, '@MATERIAL_ALGODÓN', 'Crewneck hecho en algodón, elegante y confortable', 2, '654321789'),
+(8, 'RutsEze', 300000, 'L', 32, '@MATERIAL_ALGODÓN', 'Hoddie de algodón, casual y funcional para todo tipo de actividades', 4, '963852741'),
+(9, 'MF DOOM Merch Hoddie', 290000, 'S', 55, '@MATERIAL_ALGODÓN', 'Buzo oversize de algodón color verde oscuro, ideal para un estilo casual y relajado', 1, '258369147'),
+(10, 'gaete', 140000, 'M', 65, '@MATERIAL_ALGODÓN', 'Buzo de cuello redondo de algodón ajustado y flexible', 2, '852741963'),
 (11, 'Algarete', 218000, 'M', 60, 'Algodon', 'Buzo oversize color negro echo de algodón', 1, '321654987'),
-(12, 'Bad rust', 123000, 'M', 60, 'MATERIAL_ALGODON', 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, '321654987'),
+(12, 'Bad rust', 123000, 'M', 60, '@MATERIAL_ALGODÓN', 'Buzo Oversize hecho en algodón, ideal para días lluviosos', 1, '321654987'),
 (26, 'Aqua Fina', 200000, 'L', 47, 'Cotton 100%', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
-(27, 'Aqua Fina', 180000, 'M', 30, 'MATERIAL_ALGODON', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
-(28, 'Oblivions Mighty Trash', 150000, 'XL', 25, 'MATERIAL_ALGODON', 'Hoodie de algodón. Merch de Oblivions Mighty Trash', 4, '54984563'),
-(29, 'Baby Tears', 210000, 'L', 24, 'MATERIAL_ALGODON', 'Hoodie de algodón con motivos florales.', 4, '654321789'),
-(31, 'UrbanFit', 180000, 'L', 21, 'MATERIAL_ALGODON', 'CrewNeck ideal para el día a día.', 2, '4962354'),
-(32, 'NeoHood', 280000, 'M', 2, 'MATERIAL_ALGODON', 'Half Zip perfecto para todo tipo de climas.', 3, '147258369'),
-(33, 'Arctic Flow', 178000, 'L', 4, 'AlMATERIAL_ALGODONgodón', 'Artic Flow, maneja la tranquilidad.', 3, '456789123'),
-(44, 'StormWear', 270000, 'M', 11, 'MATERIAL_ALGODON', 'Buso Half Zip a la moda.', 3, 'DOCUMENTO_PROVEEDOR_86396482'),
-(47, 'SkyWave', 110000, 'S', 32, 'MATERIAL_ALGODON', 'SkyWave, estiloso.', 4, '963852741'),
-(49, 'Certified Lover Hood', 190000, 'L', 12, 'MATERIAL_ALGODON', 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
-(50, 'Savage Mode', 230000, 'S', 23, 'MATERIAL_ALGODON', 'Hoodie de excelente calidad.', 4, '321654987');
+(27, 'Aqua Fina', 180000, 'M', 30, '@MATERIAL_ALGODÓN', 'Hoodie hecho en material 100% algodón, comodidad y frescura.', 4, '4962354'),
+(28, 'Oblivions Mighty Trash', 150000, 'XL', 25, '@MATERIAL_ALGODÓN', 'Hoodie de algodón. Merch de Oblivions Mighty Trash', 4, '54984563'),
+(29, 'Baby Tears', 210000, 'L', 24, '@MATERIAL_ALGODÓN', 'Hoodie de algodón con motivos florales.', 4, '654321789'),
+(31, 'UrbanFit', 180000, 'L', 21, '@MATERIAL_ALGODÓN', 'CrewNeck ideal para el día a día.', 2, '4962354'),
+(32, 'NeoHood', 280000, 'M', 2, '@MATERIAL_ALGODÓN', 'Half Zip perfecto para todo tipo de climas.', 3, '147258369'),
+(33, 'Arctic Flow', 178000, 'L', 4, '@MATERIAL_ALGODÓN', 'Artic Flow, maneja la tranquilidad.', 3, '456789123'),
+(44, 'StormWear', 270000, 'M', 11, '@MATERIAL_ALGODÓN', 'Buso Half Zip a la moda.', 3, 'DOCUMENTO_PROVEEDOR_86396482'),
+(47, 'SkyWave', 110000, 'S', 32, '@MATERIAL_ALGODÓN', 'SkyWave, estiloso.', 4, '963852741'),
+(49, 'Certified Lover Hood', 190000, 'L', 12, '@MATERIAL_ALGODÓN', 'Certified Lover Hood, buso a la moda para todas las edades.', 4, '321654987'),
+(50, 'Savage Mode', 230000, 'S', 23, '@MATERIAL_ALGODÓN', 'Hoodie de excelente calidad.', 4, '321654987');
 
 -- --------------------------------------------------------
 
