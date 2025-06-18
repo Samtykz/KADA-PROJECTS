@@ -31,8 +31,8 @@
                 <form method="POST" onsubmit="return validarFormulario()">
                   <?php
                   /** @SuppressWarnings("php:S4833") */
-                  include "../../Modelo/Conexion.php";
-                  include "../../Controlador/conRegistroAdministrador.php"; // NOSONAR
+                  include_once "../../Modelo/Conexion.php";
+                  include_once "../../Controlador/conRegistroAdministrador.php"; // NOSONAR
                   ?>
                   <h3 class="mb-5 text-uppercase" style="text-align: center;">REGíSTRATE</h3>
 
