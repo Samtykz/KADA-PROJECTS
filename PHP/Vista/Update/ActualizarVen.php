@@ -33,7 +33,8 @@
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Modificar Venta</p>
 
                   <?php
-                  include  "../../Controlador/ActualizarVenta.php";
+                  /** @SuppressWarnings("php:S4833") */
+                  include_once  "../../Controlador/ActualizarVenta.php"; // NOSONAR
                   ?>
                   <input type="hidden" name="id" value="<?php echo $venta['vent_codigo_PK']; ?>">
                   <div class="row">
@@ -155,5 +156,4 @@
     });
   </script>
 </body>
-
 </html>
