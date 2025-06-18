@@ -32,8 +32,8 @@
       decrease.addEventListener('click', function (e) { decreaseValue(e, quantityAmount); });
     }
     function init() {
-      for (let i = 0; i < quantity.length; i++ ) {
-        createBindings(quantity[i]);
+      for (const q of quantity) {
+        createBindings(q);
       }
     }
     function increaseValue(event, quantityAmount) {
