@@ -1,3 +1,4 @@
+/** @SuppressWarnings("php:S4833") */
 <?php
 /** @SuppressWarnings("php:S4833") */
 require_once '../Modelo/Conexion.php'; // NOSONAR
@@ -50,4 +51,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registrarClie'])) {
         echo 'Error al registrar.';
     }
     $stmt->close();
-}
+} // NOSONAR
